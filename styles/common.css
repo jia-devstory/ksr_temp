@@ -42,6 +42,16 @@ header {
   background: #FFFFFF;
   box-shadow: 0 0 2rem 1rem #FFFFFF;
 }
+@media all and (992px <= width < 1200px) {
+  header {
+    padding: 1.25rem 1.5rem;
+  }
+}
+@media all and (768px <= width < 992px) {
+  header {
+    padding: 1.25rem 1.5rem;
+  }
+}
 header > .toolbar {
   width: 100%;
   max-width: 90rem;
@@ -52,6 +62,16 @@ header > .toolbar {
   align-items: start;
   overflow: hidden;
   transition: all 0.5s ease;
+}
+@media all and (992px <= width < 1200px) {
+  header > .toolbar {
+    height: 5.625rem;
+  }
+}
+@media all and (768px <= width < 992px) {
+  header > .toolbar {
+    height: 5.625rem;
+  }
 }
 header > .toolbar > a {
   height: 2.5rem;
@@ -64,6 +84,18 @@ header > .toolbar > a {
   font-size: 0.875rem;
   font-weight: 500;
   color: #8F8F8F;
+}
+@media all and (992px <= width < 1200px) {
+  header > .toolbar > a {
+    height: 2.25rem;
+    padding: 0 2.025rem;
+  }
+}
+@media all and (768px <= width < 992px) {
+  header > .toolbar > a {
+    height: 2.25rem;
+    padding: 0 2.025rem;
+  }
 }
 header > .toolbar.disabled {
   height: 0;
@@ -78,11 +110,31 @@ header > .header-content {
   align-items: center;
   gap: 1.25rem;
 }
+@media all and (992px <= width < 1200px) {
+  header > .header-content {
+    gap: 1.125rem;
+  }
+}
+@media all and (768px <= width < 992px) {
+  header > .header-content {
+    gap: 1.125rem;
+  }
+}
 header > .header-content > .logo {
   height: 2.875rem;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+@media all and (992px <= width < 1200px) {
+  header > .header-content > .logo {
+    height: 2.5875rem;
+  }
+}
+@media all and (768px <= width < 992px) {
+  header > .header-content > .logo {
+    height: 2.5875rem;
+  }
 }
 header > .header-content > .logo > img {
   height: 100%;
@@ -92,6 +144,16 @@ header > .header-content > h1 {
   font-weight: 500;
   color: #4E4E4E;
 }
+@media all and (992px <= width < 1200px) {
+  header > .header-content > h1 {
+    font-size: 2.25rem;
+  }
+}
+@media all and (768px <= width < 992px) {
+  header > .header-content > h1 {
+    font-size: 2.25rem;
+  }
+}
 header > .header-content > nav {
   width: 100%;
   display: flex;
@@ -100,12 +162,34 @@ header > .header-content > nav {
   align-items: center;
   gap: 0.5rem;
 }
+@media all and (992px <= width < 1200px) {
+  header > .header-content > nav {
+    gap: 0.45rem;
+  }
+}
+@media all and (768px <= width < 992px) {
+  header > .header-content > nav {
+    gap: 0.45rem;
+  }
+}
 header > .header-content > nav > a {
   padding: 0.875rem 3.125rem;
   border-radius: 4rem;
   background: #F2F2F2;
   font-size: 1.125rem;
   color: #464646;
+}
+@media all and (992px <= width < 1200px) {
+  header > .header-content > nav > a {
+    padding: 0.7875rem 2.8125rem;
+    font-size: 1.0125rem;
+  }
+}
+@media all and (768px <= width < 992px) {
+  header > .header-content > nav > a {
+    padding: 0.7875rem 2rem;
+    font-size: 1.0125rem;
+  }
 }
 header > .header-content > nav > a.active {
   background: #FC3435;
@@ -119,9 +203,29 @@ main {
   z-index: 9997;
   background: #FFFFFF;
 }
+@media all and (992px <= width < 1200px) {
+  main {
+    padding-top: 16.875rem;
+  }
+}
+@media all and (768px <= width < 992px) {
+  main {
+    padding-top: 16.875rem;
+  }
+}
 main > section {
   width: 100%;
   padding: 0 2rem;
+}
+@media all and (992px <= width < 1200px) {
+  main > section {
+    padding: 0 1.5rem;
+  }
+}
+@media all and (768px <= width < 992px) {
+  main > section {
+    padding: 0 1.5rem;
+  }
 }
 main > section > .section-inner {
   width: 100%;
@@ -134,12 +238,36 @@ main > section > .section-inner {
   align-items: start;
   gap: 1.875rem;
 }
+@media all and (992px <= width < 1200px) {
+  main > section > .section-inner {
+    padding: 1.5rem 0;
+    gap: 1.6875rem;
+  }
+}
+@media all and (768px <= width < 992px) {
+  main > section > .section-inner {
+    padding: 1.5rem 0;
+    gap: 1.6875rem;
+  }
+}
 main > section > .section-inner > .section-title {
   width: 100%;
   padding: 1.5rem;
   border-bottom: 0.125rem solid #373737;
   font-size: 1.875rem;
   color: #2E2E2E;
+}
+@media all and (992px <= width < 1200px) {
+  main > section > .section-inner > .section-title {
+    padding: 1.35rem;
+    font-size: 1.6875rem;
+  }
+}
+@media all and (768px <= width < 992px) {
+  main > section > .section-inner > .section-title {
+    padding: 1.35rem;
+    font-size: 1.6875rem;
+  }
 }
 main > section > .section-inner > .notice {
   width: 100%;
@@ -152,6 +280,20 @@ main > section > .section-inner > .notice {
   gap: 1rem;
   background: #FFF3F3;
 }
+@media all and (992px <= width < 1200px) {
+  main > section > .section-inner > .notice {
+    margin-top: -1.6875rem;
+    flex-direction: column;
+    gap: 0.9rem;
+  }
+}
+@media all and (768px <= width < 992px) {
+  main > section > .section-inner > .notice {
+    margin-top: -1.6875rem;
+    flex-direction: column;
+    gap: 0.9rem;
+  }
+}
 main > section > .section-inner > .notice > h3 {
   padding: 0.5rem 3.125rem;
   display: flex;
@@ -163,10 +305,32 @@ main > section > .section-inner > .notice > h3 {
   font-weight: 500;
   color: #FC3435;
 }
+@media all and (992px <= width < 1200px) {
+  main > section > .section-inner > .notice > h3 {
+    padding: 0.45rem 2.8125rem;
+    font-size: 1.125rem;
+  }
+}
+@media all and (768px <= width < 992px) {
+  main > section > .section-inner > .notice > h3 {
+    padding: 0.45rem 2.8125rem;
+    font-size: 1.125rem;
+  }
+}
 main > section > .section-inner > .notice > span {
   font-size: 1.25rem;
   font-weight: bold;
   color: #3A3A3A;
+}
+@media all and (992px <= width < 1200px) {
+  main > section > .section-inner > .notice > span {
+    font-size: 1.125rem;
+  }
+}
+@media all and (768px <= width < 992px) {
+  main > section > .section-inner > .notice > span {
+    font-size: 1.125rem;
+  }
 }
 main > section > .section-inner > .summary {
   width: 100%;
@@ -174,6 +338,18 @@ main > section > .section-inner > .summary {
   font-size: 1.25rem;
   font-weight: 500;
   color: #7E7E7E;
+}
+@media all and (992px <= width < 1200px) {
+  main > section > .section-inner > .summary {
+    padding: 0 1.35rem;
+    font-size: 1.125rem;
+  }
+}
+@media all and (768px <= width < 992px) {
+  main > section > .section-inner > .summary {
+    padding: 0 1.35rem;
+    font-size: 1.125rem;
+  }
 }
 main > section > .section-inner > .summary > mark {
   background: none;
@@ -188,6 +364,20 @@ main > section.changes .table-wrapper {
   align-items: stretch;
   gap: 2.5rem;
 }
+@media all and (992px <= width < 1200px) {
+  main > section.changes .table-wrapper {
+    padding: 0 1.35rem;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media all and (768px <= width < 992px) {
+  main > section.changes .table-wrapper {
+    padding: 0 1.35rem;
+    flex-direction: column;
+    align-items: center;
+  }
+}
 main > section.changes .table-wrapper > .table {
   width: 50%;
   display: flex;
@@ -196,11 +386,31 @@ main > section.changes .table-wrapper > .table {
   align-items: start;
   gap: 0.75rem;
 }
+@media all and (992px <= width < 1200px) {
+  main > section.changes .table-wrapper > .table {
+    width: 100%;
+  }
+}
+@media all and (768px <= width < 992px) {
+  main > section.changes .table-wrapper > .table {
+    width: 100%;
+  }
+}
 main > section.changes .table-wrapper > .table > .table-title {
   width: 100%;
   font-size: 1.25rem;
   font-weight: bold;
   color: #2E2E2E;
+}
+@media all and (992px <= width < 1200px) {
+  main > section.changes .table-wrapper > .table > .table-title {
+    font-size: 1.125rem;
+  }
+}
+@media all and (768px <= width < 992px) {
+  main > section.changes .table-wrapper > .table > .table-title {
+    font-size: 1.125rem;
+  }
 }
 main > section.changes .table-wrapper > .table > .table-body {
   width: 100%;
@@ -218,6 +428,16 @@ main > section.changes .table-wrapper > .table > .table-body > ul {
   align-items: center;
   gap: 0.75rem;
 }
+@media all and (992px <= width < 1200px) {
+  main > section.changes .table-wrapper > .table > .table-body > ul {
+    gap: 0.675rem;
+  }
+}
+@media all and (768px <= width < 992px) {
+  main > section.changes .table-wrapper > .table > .table-body > ul {
+    gap: 0.675rem;
+  }
+}
 main > section.changes .table-wrapper > .table > .table-body > ul > li {
   width: 100%;
   padding: 0.75rem 0;
@@ -228,6 +448,18 @@ main > section.changes .table-wrapper > .table > .table-body > ul > li {
   border-radius: 4rem;
   font-size: 1.25rem;
   font-weight: 500;
+}
+@media all and (992px <= width < 1200px) {
+  main > section.changes .table-wrapper > .table > .table-body > ul > li {
+    padding: 0.675rem 0;
+    font-size: 1.125rem;
+  }
+}
+@media all and (768px <= width < 992px) {
+  main > section.changes .table-wrapper > .table > .table-body > ul > li {
+    padding: 0.675rem 0;
+    font-size: 1.125rem;
+  }
 }
 main > section.changes .table-wrapper > .table > .table-body > ul > li.name {
   color: #FFFFFF;
@@ -264,6 +496,18 @@ main > section.opinion form > input {
   font-size: 1.25rem;
   font-weight: 500;
 }
+@media all and (992px <= width < 1200px) {
+  main > section.opinion form > input {
+    padding: 0.675rem 1.35rem;
+    font-size: 1.125rem;
+  }
+}
+@media all and (768px <= width < 992px) {
+  main > section.opinion form > input {
+    padding: 0.675rem 1.35rem;
+    font-size: 1.125rem;
+  }
+}
 main > section.opinion form > input:focus {
   border-color: transparent;
   outline-color: #FC3435;
@@ -281,6 +525,18 @@ main > section.opinion form > textarea {
   font-size: 1.25rem;
   font-weight: 500;
   resize: none;
+}
+@media all and (992px <= width < 1200px) {
+  main > section.opinion form > textarea {
+    height: 14.4rem;
+    font-size: 1.125rem;
+  }
+}
+@media all and (768px <= width < 992px) {
+  main > section.opinion form > textarea {
+    height: 14.4rem;
+    font-size: 1.125rem;
+  }
 }
 main > section.opinion form > textarea:focus {
   border-color: transparent;
@@ -300,6 +556,18 @@ main > section.opinion form > .explain {
   font-size: 1.25rem;
   font-weight: 500;
   color: #7E7E7E;
+}
+@media all and (992px <= width < 1200px) {
+  main > section.opinion form > .explain {
+    padding: 0.675rem 1.35rem;
+    font-size: 1.125rem;
+  }
+}
+@media all and (768px <= width < 992px) {
+  main > section.opinion form > .explain {
+    padding: 0.675rem 1.35rem;
+    font-size: 1.125rem;
+  }
 }
 main > section.opinion form > .explain > span:first-of-type {
   font-weight: bold;
@@ -322,6 +590,18 @@ main > section.opinion form > button {
   font-weight: 500;
   color: #FFFFFF;
 }
+@media all and (992px <= width < 1200px) {
+  main > section.opinion form > button {
+    padding: 0.9rem 2.8125rem;
+    font-size: 1.125rem;
+  }
+}
+@media all and (768px <= width < 992px) {
+  main > section.opinion form > button {
+    padding: 0.9rem 2.8125rem;
+    font-size: 1.125rem;
+  }
+}
 main > section.introduce .swiper {
   width: 100%;
 }
@@ -333,6 +613,16 @@ main > section.introduce .swiper .swiper-slide {
   align-items: center;
   gap: 1.875rem;
 }
+@media all and (992px <= width < 1200px) {
+  main > section.introduce .swiper .swiper-slide {
+    gap: 1.6875rem;
+  }
+}
+@media all and (768px <= width < 992px) {
+  main > section.introduce .swiper .swiper-slide {
+    gap: 1.6875rem;
+  }
+}
 main > section.introduce .swiper .swiper-slide > .section-title {
   width: 100%;
   padding: 1.5rem;
@@ -340,12 +630,36 @@ main > section.introduce .swiper .swiper-slide > .section-title {
   font-size: 1.875rem;
   color: #2E2E2E;
 }
+@media all and (992px <= width < 1200px) {
+  main > section.introduce .swiper .swiper-slide > .section-title {
+    padding: 1.35rem;
+    font-size: 1.6875rem;
+  }
+}
+@media all and (768px <= width < 992px) {
+  main > section.introduce .swiper .swiper-slide > .section-title {
+    padding: 1.35rem;
+    font-size: 1.6875rem;
+  }
+}
 main > section.introduce .swiper .swiper-slide > .section-title > sub {
   padding: 0.25rem 1rem;
   border-radius: 2rem;
   background: #2E2E2E;
   font-size: 1.125rem;
   color: #EBEB2B;
+}
+@media all and (992px <= width < 1200px) {
+  main > section.introduce .swiper .swiper-slide > .section-title > sub {
+    padding: 0.225rem 0.9rem;
+    font-size: 1.0125rem;
+  }
+}
+@media all and (768px <= width < 992px) {
+  main > section.introduce .swiper .swiper-slide > .section-title > sub {
+    padding: 0.225rem 0.9rem;
+    font-size: 1.0125rem;
+  }
 }
 main > section.introduce .swiper .swiper-slide > .notice {
   width: 100%;
@@ -358,6 +672,20 @@ main > section.introduce .swiper .swiper-slide > .notice {
   gap: 1rem;
   background: #FFF3F3;
 }
+@media all and (992px <= width < 1200px) {
+  main > section.introduce .swiper .swiper-slide > .notice {
+    margin-top: -1.6875rem;
+    flex-direction: column;
+    gap: 0.9rem;
+  }
+}
+@media all and (768px <= width < 992px) {
+  main > section.introduce .swiper .swiper-slide > .notice {
+    margin-top: -1.6875rem;
+    flex-direction: column;
+    gap: 0.9rem;
+  }
+}
 main > section.introduce .swiper .swiper-slide > .notice > h3 {
   padding: 0.5rem 3.125rem;
   display: flex;
@@ -369,10 +697,32 @@ main > section.introduce .swiper .swiper-slide > .notice > h3 {
   font-weight: 500;
   color: #FC3435;
 }
+@media all and (992px <= width < 1200px) {
+  main > section.introduce .swiper .swiper-slide > .notice > h3 {
+    padding: 0.45rem 2.8125rem;
+    font-size: 1.125rem;
+  }
+}
+@media all and (768px <= width < 992px) {
+  main > section.introduce .swiper .swiper-slide > .notice > h3 {
+    padding: 0.45rem 2.8125rem;
+    font-size: 1.125rem;
+  }
+}
 main > section.introduce .swiper .swiper-slide > .notice > span {
   font-size: 1.25rem;
   font-weight: bold;
   color: #3A3A3A;
+}
+@media all and (992px <= width < 1200px) {
+  main > section.introduce .swiper .swiper-slide > .notice > span {
+    font-size: 1.125rem;
+  }
+}
+@media all and (768px <= width < 992px) {
+  main > section.introduce .swiper .swiper-slide > .notice > span {
+    font-size: 1.125rem;
+  }
 }
 main > section.introduce .swiper .swiper-slide > .summary {
   width: 100%;
@@ -380,6 +730,18 @@ main > section.introduce .swiper .swiper-slide > .summary {
   font-size: 1.25rem;
   font-weight: 500;
   color: #7E7E7E;
+}
+@media all and (992px <= width < 1200px) {
+  main > section.introduce .swiper .swiper-slide > .summary {
+    padding: 0 1.35rem;
+    font-size: 1.125rem;
+  }
+}
+@media all and (768px <= width < 992px) {
+  main > section.introduce .swiper .swiper-slide > .summary {
+    padding: 0 1.35rem;
+    font-size: 1.125rem;
+  }
 }
 main > section.introduce .swiper .swiper-slide > .summary > mark {
   background: none;
@@ -393,17 +755,49 @@ main > section.introduce .swiper .swiper-slide > .explain {
   justify-content: start;
   align-items: start;
 }
+@media all and (992px <= width < 1200px) {
+  main > section.introduce .swiper .swiper-slide > .explain {
+    padding: 2.25rem 1.35rem;
+  }
+}
+@media all and (768px <= width < 992px) {
+  main > section.introduce .swiper .swiper-slide > .explain {
+    padding: 2.25rem 1.35rem;
+  }
+}
 main > section.introduce .swiper .swiper-slide > .explain > span {
   margin-bottom: 1rem;
   font-size: 1.25rem;
   font-weight: bold;
   color: #2E2E2E;
 }
+@media all and (992px <= width < 1200px) {
+  main > section.introduce .swiper .swiper-slide > .explain > span {
+    margin-bottom: 0.9rem;
+    font-size: 1.125rem;
+  }
+}
+@media all and (768px <= width < 992px) {
+  main > section.introduce .swiper .swiper-slide > .explain > span {
+    margin-bottom: 0.9rem;
+    font-size: 1.125rem;
+  }
+}
 main > section.introduce .swiper .swiper-slide > .explain > li {
   list-style: inside;
   font-size: 1.25rem;
   font-weight: 500;
   color: #7E7E7E;
+}
+@media all and (992px <= width < 1200px) {
+  main > section.introduce .swiper .swiper-slide > .explain > li {
+    font-size: 1.125rem;
+  }
+}
+@media all and (768px <= width < 992px) {
+  main > section.introduce .swiper .swiper-slide > .explain > li {
+    font-size: 1.125rem;
+  }
 }
 main > section.introduce .swiper .swiper-slide > .explain > li::marker {
   content: " - ";
@@ -412,13 +806,43 @@ main > section.introduce .swiper .swiper-slide:nth-of-type(1) {
   background: rgba(255, 255, 255, 0.3) url("../images/slide01.png") no-repeat right bottom/43.75rem auto;
   background-blend-mode: color;
 }
+@media all and (992px <= width < 1200px) {
+  main > section.introduce .swiper .swiper-slide:nth-of-type(1) {
+    background: none;
+  }
+}
+@media all and (768px <= width < 992px) {
+  main > section.introduce .swiper .swiper-slide:nth-of-type(1) {
+    background: none;
+  }
+}
 main > section.introduce .swiper .swiper-slide:nth-of-type(2) {
   background: rgba(255, 255, 255, 0.3) url("../images/slide02.png") no-repeat right bottom/43.75rem auto;
   background-blend-mode: color;
 }
+@media all and (992px <= width < 1200px) {
+  main > section.introduce .swiper .swiper-slide:nth-of-type(2) {
+    background: none;
+  }
+}
+@media all and (768px <= width < 992px) {
+  main > section.introduce .swiper .swiper-slide:nth-of-type(2) {
+    background: none;
+  }
+}
 main > section.introduce .swiper .swiper-slide:nth-of-type(3) {
   background: rgba(255, 255, 255, 0.3) url("../images/slide03.png") no-repeat right bottom/26.25rem auto;
   background-blend-mode: color;
+}
+@media all and (992px <= width < 1200px) {
+  main > section.introduce .swiper .swiper-slide:nth-of-type(3) {
+    background: none;
+  }
+}
+@media all and (768px <= width < 992px) {
+  main > section.introduce .swiper .swiper-slide:nth-of-type(3) {
+    background: none;
+  }
 }
 main > section.introduce .swiper-control {
   width: 100%;
@@ -434,6 +858,16 @@ main > section.introduce .swiper-control > a {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+@media all and (992px <= width < 1200px) {
+  main > section.introduce .swiper-control > a {
+    width: 2.5rem;
+  }
+}
+@media all and (768px <= width < 992px) {
+  main > section.introduce .swiper-control > a {
+    width: 2.5rem;
+  }
 }
 main > section.introduce .swiper-control > a > img {
   width: 100%;
@@ -456,12 +890,32 @@ main > section.next {
   margin-top: 2rem;
   background: #F6F6F6;
 }
+@media all and (992px <= width < 1200px) {
+  main > section.next {
+    margin-top: 1.8rem;
+  }
+}
+@media all and (768px <= width < 992px) {
+  main > section.next {
+    margin-top: 1.8rem;
+  }
+}
 main > section.next > .section-inner {
   padding: 6.25rem 0;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+}
+@media all and (992px <= width < 1200px) {
+  main > section.next > .section-inner {
+    padding: 5.625rem 0;
+  }
+}
+@media all and (768px <= width < 992px) {
+  main > section.next > .section-inner {
+    padding: 5.625rem 0;
+  }
 }
 main > section.next > .section-inner > .text {
   display: flex;
@@ -474,15 +928,49 @@ main > section.next > .section-inner > .text > h3 {
   font-size: 1.875rem;
   color: #FC3435;
 }
+@media all and (992px <= width < 1200px) {
+  main > section.next > .section-inner > .text > h3 {
+    margin-bottom: 0.45rem;
+    font-size: 1.6875rem;
+  }
+}
+@media all and (768px <= width < 992px) {
+  main > section.next > .section-inner > .text > h3 {
+    margin-bottom: 0.45rem;
+    font-size: 1.6875rem;
+  }
+}
 main > section.next > .section-inner > .text > h2 {
   margin-bottom: 1.25rem;
   font-size: 3.125rem;
   color: #2E2E2E;
 }
+@media all and (992px <= width < 1200px) {
+  main > section.next > .section-inner > .text > h2 {
+    margin-bottom: 1.125rem;
+    font-size: 2.8125rem;
+  }
+}
+@media all and (768px <= width < 992px) {
+  main > section.next > .section-inner > .text > h2 {
+    margin-bottom: 1.125rem;
+    font-size: 2.8125rem;
+  }
+}
 main > section.next > .section-inner > .text > span {
   font-size: 1.25rem;
   font-weight: 500;
   color: #7E7E7E;
+}
+@media all and (992px <= width < 1200px) {
+  main > section.next > .section-inner > .text > span {
+    font-size: 1.125rem;
+  }
+}
+@media all and (768px <= width < 992px) {
+  main > section.next > .section-inner > .text > span {
+    font-size: 1.125rem;
+  }
 }
 main > section.next > .section-inner > a {
   padding: 1.5rem 3rem;
@@ -497,8 +985,32 @@ main > section.next > .section-inner > a {
   font-weight: 500;
   color: #FFFFFF;
 }
+@media all and (992px <= width < 1200px) {
+  main > section.next > .section-inner > a {
+    padding: 1.35rem 2.7rem;
+    gap: 1.35rem;
+    font-size: 1.35rem;
+  }
+}
+@media all and (768px <= width < 992px) {
+  main > section.next > .section-inner > a {
+    padding: 1.35rem 2.7rem;
+    gap: 1.35rem;
+    font-size: 1.35rem;
+  }
+}
 main > section.next > .section-inner > a > img {
   width: 3.875rem;
+}
+@media all and (992px <= width < 1200px) {
+  main > section.next > .section-inner > a > img {
+    width: 3.4875rem;
+  }
+}
+@media all and (768px <= width < 992px) {
+  main > section.next > .section-inner > a > img {
+    width: 3.4875rem;
+  }
 }
 
 footer {
@@ -506,6 +1018,16 @@ footer {
   padding: 0 2rem;
   z-index: 9997;
   background: #0F0F0F;
+}
+@media all and (992px <= width < 1200px) {
+  footer {
+    padding: 0 1.5rem;
+  }
+}
+@media all and (768px <= width < 992px) {
+  footer {
+    padding: 0 1.5rem;
+  }
 }
 footer > .footer-inner {
   width: 100%;
@@ -518,10 +1040,32 @@ footer > .footer-inner {
   align-items: start;
   gap: 3.125rem;
 }
+@media all and (992px <= width < 1200px) {
+  footer > .footer-inner {
+    padding: 2.8125rem 0;
+    gap: 2.8125rem;
+  }
+}
+@media all and (768px <= width < 992px) {
+  footer > .footer-inner {
+    padding: 2.8125rem 0;
+    gap: 2.8125rem;
+  }
+}
 footer > .footer-inner > .info {
   font-size: 1rem;
   line-height: 160%;
   color: #9C9C9C;
+}
+@media all and (992px <= width < 1200px) {
+  footer > .footer-inner > .info {
+    font-size: 0.9rem;
+  }
+}
+@media all and (768px <= width < 992px) {
+  footer > .footer-inner > .info {
+    font-size: 0.9rem;
+  }
 }
 footer > .footer-inner > .info > p:first-of-type {
   font-weight: bold;
@@ -542,6 +1086,16 @@ footer > .footer-inner > .info > p:first-of-type {
   background: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(0.25rem);
 }
+@media all and (992px <= width < 1200px) {
+  .alert {
+    padding: 0 1.5rem;
+  }
+}
+@media all and (768px <= width < 992px) {
+  .alert {
+    padding: 0 1.5rem;
+  }
+}
 .alert > .alert-inner {
   width: 100%;
   max-width: 30rem;
@@ -549,16 +1103,36 @@ footer > .footer-inner > .info > p:first-of-type {
   aspect-ratio: 4/3;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
   border: 0.125rem solid #FC3435;
   border-radius: 1rem;
   background: #FFFFFF;
 }
+@media all and (992px <= width < 1200px) {
+  .alert > .alert-inner {
+    padding: 1.35rem;
+  }
+}
+@media all and (768px <= width < 992px) {
+  .alert > .alert-inner {
+    padding: 1.35rem;
+  }
+}
 .alert > .alert-inner > span {
   font-size: 1.5rem;
   font-weight: bold;
   text-align: center;
+}
+@media all and (992px <= width < 1200px) {
+  .alert > .alert-inner > span {
+    font-size: 1.35rem;
+  }
+}
+@media all and (768px <= width < 992px) {
+  .alert > .alert-inner > span {
+    font-size: 1.35rem;
+  }
 }
 .alert > .alert-inner > .close {
   padding: 0.75rem 3rem;
@@ -569,6 +1143,18 @@ footer > .footer-inner > .info > p:first-of-type {
   font-size: 1.25rem;
   font-weight: 500;
   color: #FFFFFF;
+}
+@media all and (992px <= width < 1200px) {
+  .alert > .alert-inner > .close {
+    padding: 0.675rem 2.7rem;
+    font-size: 1.125rem;
+  }
+}
+@media all and (768px <= width < 992px) {
+  .alert > .alert-inner > .close {
+    padding: 0.675rem 2.7rem;
+    font-size: 1.125rem;
+  }
 }
 .alert.active {
   z-index: 9999;
