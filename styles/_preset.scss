@@ -1,0 +1,31 @@
+//viewport
+@mixin vp-xxl {
+  @media all and (1400px <= width) {
+    @content
+  }
+}
+@mixin vp-xl {
+  @media all and (1200px <= width < 1400px) {
+    @content
+  }
+}
+@mixin vp-lg {
+  @media all and (992px <= width < 1200px) {
+    @content
+  }
+}
+@mixin vp-md {
+  @media all and (768px <= width < 992px) {
+    @content
+  }
+}
+@mixin vp-sm {
+  @media all and (576px <= width < 768px) {
+    @content
+  }
+}
+@mixin vp-xs {
+  @media all and (width < 576px) {
+    @content
+  }
+}
