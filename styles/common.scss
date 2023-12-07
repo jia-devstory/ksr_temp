@@ -17,6 +17,11 @@ body {
   height: 100dvh;
 }
 
+a {
+  text-decoration: none;
+  color: unset;
+}
+
 ul, ol, li {
   list-style: none;
 }
