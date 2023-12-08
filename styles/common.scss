@@ -1,5 +1,13 @@
 @import "preset";
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@font-face {
+  font-family: "GmarketSans";
+  font-style: normal;
+  font-weight: normal;
+  src: local("GmarketSans"),
+  url("../fonts/GmarketSansTTFBold.ttf") format("truetype"),
+  url("../fonts/GmarketSansBold.otf") format("opentype");
+}
 
 * {
   margin: 0;
@@ -28,220 +36,18 @@ ul, ol, li {
 
 #app {
   width: 100%;
-}
+  height: 100%;
+  position: sticky;
 
-header {
-  width: 100%;
-  padding: 1.25rem 2rem;
-  position: fixed;
-  top: 0;
-  left: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  align-items: center;
-  z-index: 9998;
-  background: #FFFFFF;
-  box-shadow: 0 0 2rem .5rem #FFFFFF;
-  @include vp-lg {
-    padding: calc(1.25rem * .9) 1.5rem;
-  }
-  @include vp-md {
-    padding: calc(1.25rem * .9) 1.5rem;
-  }
-  @include vp-sm {
-    padding: calc(1.25rem * .8) 1rem;
-  }
-  @include vp-xs {
-    padding: calc(1.25rem * .75) 1rem;
-  }
-
-  > .toolbar {
-    width: 100%;
-    max-width: 90rem;
-    height: 6.25rem;
-    display: flex;
-    flex-direction: row;
-    justify-content: end;
-    align-items: start;
-    overflow: hidden;
-    transition: all .5s ease;
-    @include vp-lg {
-      height: calc(6.25rem * .9);
-    }
-    @include vp-md {
-      height: calc(6.25rem * .9);
-    }
-    @include vp-sm {
-      height: calc(6.25rem * .8);
-    }
-    @include vp-xs {
-      height: calc(6.25rem * .75);
-    }
-
-    > a {
-      height: 2.5rem;
-      padding: 0 2.25rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border-radius: 2.5rem;
-      background: #F2F2F2;
-      font-size: .875rem;
-      font-weight: 500;
-      color: #8F8F8F;
-      @include vp-lg {
-        height: calc(2.5rem * .9);
-        padding: 0 calc(2.25rem * .9);
-      }
-      @include vp-md {
-        height: calc(2.5rem * .9);
-        padding: 0 calc(2.25rem * .9);
-      }
-      @include vp-sm {
-        height: calc(2.5rem * .8);
-        padding: 0 calc(2.25rem * .8);
-      }
-      @include vp-xs {
-        height: calc(2.5rem * .75);
-        padding: 0 calc(2.25rem * .75);
-      }
-    }
-
-    &.disabled {
-      height: 0;
-    }
-  }
-
-  > .header-content {
-    width: 100%;
-    max-width: 90rem;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 1.25rem;
-    @include vp-lg {
-      gap: calc(1.25rem * .9);
-    }
-    @include vp-md {
-      gap: calc(1.25rem * .9);
-    }
-    @include vp-sm {
-      gap: calc(1.25rem * .8);
-    }
-    @include vp-xs {
-      gap: calc(1.25rem * .75);
-    }
-
-    > .logo {
-      height: 2.875rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      @include vp-lg {
-        height: calc(2.875rem * .9);
-      }
-      @include vp-md {
-        height: calc(2.875rem * .9);
-      }
-      @include vp-sm {
-        height: 2rem;
-      }
-      @include vp-xs {
-        height: 1.5rem;
-      }
-
-      > img {
-        height: 100%;
-      }
-    }
-
-    > h1 {
-      font-size: 2.5rem;
-      font-weight: 500;
-      color: #4E4E4E;
-      @include vp-lg {
-        font-size: calc(2.5rem * .9);
-      }
-      @include vp-md {
-        font-size: calc(2.5rem * .9);
-      }
-      @include vp-sm {
-        font-size: 1.75rem;
-      }
-      @include vp-xs {
-        font-size: 1.25rem;
-      }
-    }
-
-    > nav {
-      width: 100%;
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-      gap: .5rem;
-      @include vp-lg {
-        gap: calc(.5rem * .9);
-      }
-      @include vp-md {
-        gap: calc(.5rem * .9);
-      }
-      @include vp-sm {
-        display: none;
-      }
-      @include vp-xs {
-        display: none;
-      }
-
-      > a {
-        padding: .875rem 3.125rem;
-        border-radius: 4rem;
-        background: #F2F2F2;
-        font-size: 1.125rem;
-        color: #464646;
-        @include vp-lg {
-          padding: calc(.875rem * .9) calc(3.125rem * .9);
-          font-size: calc(1.125rem * .9);
-        }
-        @include vp-md {
-          padding: calc(.875rem * .9) 2rem;
-          font-size: calc(1.125rem * .9);
-        }
-
-        &.active {
-          background: #FC3435;
-          font-weight: 500;
-          color: #FFFFFF;
-        }
-      }
-    }
-  }
-}
-
-main {
-  width: 100%;
-  padding-top: 18.75rem;
-  z-index: 9997;
-  background: #FFFFFF;
-  @include vp-lg {
-    padding-top: calc(18.75rem * .9);
-  }
-  @include vp-md {
-    padding-top: calc(18.75rem * .9);
-  }
-  @include vp-sm {
-    padding-top: 10rem;
-  }
-  @include vp-xs {
-    padding-top: 10rem;
-  }
-
-  > section {
+  > header {
     width: 100%;
     padding: 0 2rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9996;
+    background: #FFFFFF;
+    box-shadow: 0 0 2rem .5rem #FFFFFF;
     @include vp-lg {
       padding: 0 1.5rem;
     }
@@ -255,60 +61,401 @@ main {
       padding: 0 1rem;
     }
 
-    > .section-inner {
+    > .header-inner {
       width: 100%;
       max-width: 90rem;
       margin: 0 auto;
-      padding: 2rem 0;
+      padding: 1.25rem 0;
       display: flex;
       flex-direction: column;
       justify-content: start;
-      align-items: start;
-      gap: 1.875rem;
+      align-items: center;
       @include vp-lg {
-        padding: 1.5rem 0;
-        gap: calc(1.875rem * .9);
+        padding: calc(1.25rem * .9) 0;
       }
       @include vp-md {
-        padding: 1.5rem 0;
-        gap: calc(1.875rem * .9);
+        padding: calc(1.25rem * .9) 0;
       }
       @include vp-sm {
-        padding: 1rem 0;
-        gap: calc(1.875rem * .8);
+        padding: calc(1.25rem * .8) 0;
       }
       @include vp-xs {
-        padding: 1rem 0;
-        gap: calc(1.875rem * .75);
+        padding: calc(1.25rem * .75) 0;
       }
 
-      > .section-title {
+      > .toolbar {
         width: 100%;
-        padding: 1.5rem;
-        border-bottom: .125rem solid #373737;
-        font-size: 1.875rem;
-        color: #2E2E2E;
+        height: 6.25rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: end;
+        align-items: start;
+        overflow: hidden;
+        transition: all .3s ease;
         @include vp-lg {
-          padding: calc(1.5rem * .9);
-          font-size: calc(1.875rem * .9);
+          height: calc(6.25rem * .9);
         }
         @include vp-md {
-          padding: calc(1.5rem * .9);
-          font-size: calc(1.875rem * .9);
+          height: calc(6.25rem * .9);
         }
         @include vp-sm {
-          padding: 1rem;
-          font-size: calc(1.875rem * .8);
+          height: calc(6.25rem * .8);
         }
         @include vp-xs {
-          padding: 1rem;
-          font-size: calc(1.875rem * .75);
+          height: calc(6.25rem * .75);
+        }
+
+        > a {
+          height: 2.5rem;
+          padding: 0 2.25rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border: .0625rem solid transparent;
+          border-radius: 2.5rem;
+          background: #F2F2F2;
+          font-size: .875rem;
+          font-weight: 500;
+          letter-spacing: -.035rem;
+          text-indent: -.035rem;
+          color: #8F8F8F;
+          transition: all .3s ease;
+          @include vp-lg {
+            height: calc(2.5rem * .9);
+            padding: 0 calc(2.25rem * .9);
+            font-size: calc(.875rem * .9);
+            letter-spacing: calc(-.035rem * .9);
+            text-indent: calc(-.035rem * .9);
+          }
+          @include vp-md {
+            height: calc(2.5rem * .9);
+            padding: 0 calc(2.25rem * .9);
+            font-size: calc(.875rem * .9);
+            letter-spacing: calc(-.035rem * .9);
+            text-indent: calc(-.035rem * .9);
+          }
+          @include vp-sm {
+            height: calc(2.5rem * .8);
+            padding: 0 calc(2.25rem * .8);
+            font-size: calc(.875rem * .8);
+            letter-spacing: calc(-.035rem * .8);
+            text-indent: calc(-.035rem * .8);
+          }
+          @include vp-xs {
+            height: calc(2.5rem * .75);
+            padding: 0 calc(2.25rem * .75);
+            font-size: calc(.875rem * .75);
+            letter-spacing: calc(-.035rem * .75);
+            text-indent: calc(-.035rem * .75);
+          }
+
+          &:hover {
+            border-color: #FC3435;
+            background: #FFFFFF;
+            color: #FC3435;
+          }
+        }
+
+        &.disabled {
+          height: 0;
         }
       }
 
-      > .notice {
+      > .title {
         width: 100%;
-        margin-top: -1.875rem;
+        margin-bottom: 1.25rem;
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 1.25rem;
+        @include vp-lg {
+          margin-bottom: calc(1.25rem * .9);
+          gap: calc(1.25rem * .9);
+        }
+        @include vp-md {
+          margin-bottom: calc(1.25rem * .9);
+          gap: calc(1.25rem * .9);
+        }
+        @include vp-sm {
+          margin-bottom: calc(1.25rem * .8);
+          justify-content: space-between;
+          gap: calc(1.25rem * .8);
+        }
+        @include vp-xs {
+          margin-bottom: calc(1.25rem * .75);
+          justify-content: space-between;
+          gap: calc(1.25rem * .75);
+        }
+
+        > .btn-wrapper {
+          margin-right: auto;
+          display: none;
+          justify-content: center;
+          align-items: center;
+          @include vp-sm {
+            height: 2rem;
+            display: flex;
+          }
+          @include vp-xs {
+            height: 1.25rem;
+            display: flex;
+          }
+
+          > .open-aside {
+            width: 1.25rem;
+            aspect-ratio: 1 / 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            > img {
+              width: 100%;
+            }
+          }
+        }
+
+        > .logo {
+          height: 2.875rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          @include vp-lg {
+            height: calc(2.875rem * .9);
+          }
+          @include vp-md {
+            height: calc(2.875rem * .9);
+          }
+          @include vp-sm {
+            height: 2rem;
+          }
+          @include vp-xs {
+            height: 1.25rem;
+          }
+
+          > img {
+            height: 100%;
+          }
+        }
+
+        > h1 {
+          font-size: 2.5rem;
+          font-weight: 500;
+          letter-spacing: -.1rem;
+          text-indent: -.1rem;
+          color: #4E4E4E;
+          @include vp-lg {
+            font-size: calc(2.5rem * .9);
+            letter-spacing: calc(-.1rem * .9);
+            text-indent: calc(-.1rem * .9);
+          }
+          @include vp-md {
+            font-size: calc(2.5rem * .9);
+            letter-spacing: calc(-.1rem * .9);
+            text-indent: calc(-.1rem * .9);
+          }
+          @include vp-sm {
+            font-size: 1.75rem;
+            letter-spacing: -.07rem;
+            text-indent: -.07rem;
+          }
+          @include vp-xs {
+            font-size: 1.125rem;
+            letter-spacing: -.045rem;
+            text-indent: -.045rem;
+          }
+        }
+      }
+
+      > nav {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: .5rem;
+        @include vp-lg {
+          gap: calc(.5rem * .9);
+        }
+        @include vp-md {
+          gap: calc(.5rem * .9);
+        }
+        @include vp-sm {
+          display: none;
+        }
+        @include vp-xs {
+          display: none;
+        }
+
+        > a {
+          padding: .75rem 3.125rem;
+          border: .0625rem solid transparent;
+          border-radius: 2rem;
+          background: #F2F2F2;
+          font-size: 1.125rem;
+          letter-spacing: -.045rem;
+          text-indent: -.045rem;
+          color: #464646;
+          transition: all .3s ease;
+          @include vp-lg {
+            padding: calc(.75rem * .9) calc(3.125rem * .9);
+            font-size: calc(1.125rem * .9);
+            letter-spacing: calc(-.045rem * .9);
+            text-indent: calc(-.045rem * .9);
+          }
+          @include vp-md {
+            padding: calc(.75rem * .9) 2rem;
+            font-size: calc(1.125rem * .9);
+            letter-spacing: calc(-.045rem * .9);
+            text-indent: calc(-.045rem * .9);
+          }
+
+          &.active {
+            background: #FC3435;
+            font-weight: 500;
+            color: #FFFFFF;
+          }
+
+          &:not(.active):hover {
+            border-color: #FC3435;
+            background: #FFFFFF;
+            color: #FC3435;
+          }
+        }
+      }
+    }
+  }
+
+  > main {
+    width: 100%;
+    padding-top: 15rem;
+    z-index: 9995;
+    background: #FFFFFF;
+    @include vp-lg {
+      padding-top: calc(15rem * .9);
+    }
+    @include vp-md {
+      padding-top: calc(15rem * .9);
+    }
+    @include vp-sm {
+      padding-top: calc(15rem * .8);
+    }
+    @include vp-xs {
+      padding-top: calc(15rem * .75);
+    }
+
+    > section {
+      width: 100%;
+      padding: 0 2rem;
+      @include vp-lg {
+        padding: 0 1.5rem;
+      }
+      @include vp-md {
+        padding: 0 1.5rem;
+      }
+      @include vp-sm {
+        padding: 0 1rem;
+      }
+      @include vp-xs {
+        padding: 0 1rem;
+      }
+
+      > .section-inner {
+        width: 100%;
+        max-width: 90rem;
+        margin: 0 auto;
+        padding: 3.125rem 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+        @include vp-lg {
+          padding: calc(3.125rem * .9) 0;
+        }
+        @include vp-md {
+          padding: calc(3.125rem * .9) 0;
+        }
+        @include vp-sm {
+          padding: calc(3.125rem * .8) 0;
+        }
+        @include vp-xs {
+          padding: calc(3.125rem * .75) 0;
+        }
+      }
+
+      .section-title {
+        width: 100%;
+        padding: 1rem 1.5rem;
+        border-bottom: .125rem solid #373737;
+        font-size: 1.875rem;
+        letter-spacing: -.075rem;
+        text-indent: -.075rem;
+        color: #2E2E2E;
+        @include vp-lg {
+          padding: .9rem calc(1.5rem * .9);
+          font-size: calc(1.875rem * .9);
+          letter-spacing: calc(-.075rem * .9);
+          text-indent: calc(-.075rem * .9);
+        }
+        @include vp-md {
+          padding: .9rem calc(1.5rem * .9);
+          font-size: calc(1.875rem * .9);
+          letter-spacing: calc(-.075rem * .9);
+          text-indent: calc(-.075rem * .9);
+        }
+        @include vp-sm {
+          padding: .8rem 1rem;
+          font-size: calc(1.875rem * .8);
+          letter-spacing: calc(-.075rem * .8);
+          text-indent: calc(-.075rem * .8);
+        }
+        @include vp-xs {
+          padding: .75rem .5rem;
+          font-size: calc(1.875rem * .75);
+          letter-spacing: calc(-.075rem * .75);
+          text-indent: calc(-.075rem * .75);
+        }
+
+        > mark {
+          padding: .125rem 1rem;
+          border-radius: 2rem;
+          background: #2E2E2E;
+          font-size: 1.125rem;
+          font-weight: bold;
+          letter-spacing: -.045rem;
+          text-indent: -.045rem;
+          color: #EBEB2B;
+          @include vp-lg {
+            padding: calc(.125rem * .9) .9rem;
+            font-size: calc(1.125rem * .9);
+            letter-spacing: calc(-.045rem * .9);
+            text-indent: calc(-.045rem * .9);
+          }
+          @include vp-md {
+            padding: calc(.125rem * .9) .9rem;
+            font-size: calc(1.125rem * .9);
+            letter-spacing: calc(-.045rem * .9);
+            text-indent: calc(-.045rem * .9);
+          }
+          @include vp-sm {
+            padding: calc(.125rem * .8) .8rem;
+            font-size: calc(1.125rem * .8);
+            letter-spacing: calc(-.045rem * .8);
+            text-indent: calc(-.045rem * .8);
+          }
+          @include vp-xs {
+            padding: calc(.125rem * .75) .75rem;
+            font-size: calc(1.125rem * .75);
+            letter-spacing: calc(-.045rem * .75);
+            text-indent: calc(-.045rem * .75);
+          }
+        }
+      }
+
+      .notice {
+        width: 100%;
         padding: 1.75rem;
         display: flex;
         flex-direction: row;
@@ -317,24 +464,24 @@ main {
         gap: 1rem;
         background: #FFF3F3;
         @include vp-lg {
-          margin-top: calc(-1.875rem * .9);
+          padding: calc(1.75rem * .9);
           flex-direction: column;
-          gap: .9rem;
+          gap: .5rem;
         }
         @include vp-md {
-          margin-top: calc(-1.875rem * .9);
+          padding: calc(1.75rem * .9);
           flex-direction: column;
-          gap: .9rem;
+          gap: .5rem;
         }
         @include vp-sm {
-          margin-top: calc(-1.875rem * .8);
+          padding: calc(1.75rem * .8);
           flex-direction: column;
-          gap: .8rem;
+          gap: .5rem;
         }
         @include vp-xs {
-          margin-top: calc(-1.875rem * .75);
+          padding: calc(1.75rem * .75) 1rem;
           flex-direction: column;
-          gap: .75rem;
+          gap: .25rem;
         }
 
         > h3 {
@@ -344,67 +491,97 @@ main {
           align-items: center;
           border: .0625rem solid #FC3435;
           border-radius: 4rem;
-          font-size: 1.25rem;
+          font-size: 1.125rem;
           font-weight: 500;
+          letter-spacing: -.045rem;
+          text-indent: -.045rem;
           color: #FC3435;
           @include vp-lg {
             padding: calc(.5rem * .9) calc(3.125rem * .9);
-            font-size: calc(1.25rem * .9);
+            font-size: calc(1.125rem * .9);
+            letter-spacing: calc(-.045rem * .9);
+            text-indent: calc(-.045rem * .9);
           }
           @include vp-md {
             padding: calc(.5rem * .9) calc(3.125rem * .9);
-            font-size: calc(1.25rem * .9);
+            font-size: calc(1.125rem * .9);
+            letter-spacing: calc(-.045rem * .9);
+            text-indent: calc(-.045rem * .9);
           }
           @include vp-sm {
             padding: calc(.5rem * .8) calc(3.125rem * .8);
-            font-size: calc(1.25rem * .8);
+            font-size: calc(1.125rem * .8);
+            letter-spacing: calc(-.045rem * .8);
+            text-indent: calc(-.045rem * .8);
           }
           @include vp-xs {
             padding: calc(.5rem * .75) calc(3.125rem * .75);
-            font-size: calc(1.25rem * .75);
+            font-size: calc(1.125rem * .75);
+            letter-spacing: calc(-.045rem * .75);
+            text-indent: calc(-.045rem * .75);
           }
         }
 
         > span {
-          font-size: 1.25rem;
+          font-size: 1.125rem;
           font-weight: bold;
+          letter-spacing: -.045rem;
+          text-indent: -.045rem;
           color: #3A3A3A;
           @include vp-lg {
-            font-size: calc(1.25rem * .9);
+            font-size: calc(1.125rem * .9);
+            letter-spacing: calc(-.045rem * .9);
+            text-indent: calc(-.045rem * .9);
           }
           @include vp-md {
-            font-size: calc(1.25rem * .9);
+            font-size: calc(1.125rem * .9);
+            letter-spacing: calc(-.045rem * .9);
+            text-indent: calc(-.045rem * .9);
           }
           @include vp-sm {
-            font-size: calc(1.25rem * .8);
+            font-size: calc(1.125rem * .8);
+            letter-spacing: calc(-.045rem * .8);
+            text-indent: calc(-.045rem * .8);
           }
           @include vp-xs {
-            font-size: calc(1.25rem * .75);
+            font-size: calc(1.125rem * .75);
+            letter-spacing: calc(-.045rem * .75);
+            text-indent: calc(-.045rem * .75);
           }
         }
       }
 
-      > .summary {
+      .summary {
         width: 100%;
-        padding: 0 1.5rem;
-        font-size: 1.25rem;
+        padding: 1.875rem 1.5rem;
+        font-size: 1.125rem;
         font-weight: 500;
+        letter-spacing: -.045rem;
+        text-indent: -.045rem;
         color: #7E7E7E;
         @include vp-lg {
-          padding: 0 calc(1.5rem * .9);
-          font-size: calc(1.25rem * .9);
+          padding: calc(1.875rem * .9) calc(1.5rem * .9);
+          font-size: calc(1.125rem * .9);
+          letter-spacing: calc(-.045rem * .9);
+          text-indent: calc(-.045rem * .9);
         }
         @include vp-md {
-          padding: 0 calc(1.5rem * .9);
-          font-size: calc(1.25rem * .9);
+          padding: calc(1.875rem * .9) calc(1.5rem * .9);
+          font-size: calc(1.125rem * .9);
+          letter-spacing: calc(-.045rem * .9);
+          text-indent: calc(-.045rem * .9);
         }
         @include vp-sm {
-          padding: 0 1rem;
-          font-size: calc(1.25rem * .8);
+          padding: calc(1.875rem * .8) 1rem;
+          font-size: calc(1.125rem * .8);
+          letter-spacing: calc(-.045rem * .8);
+          text-indent: calc(-.045rem * .8);
         }
         @include vp-xs {
-          padding: 0 1rem;
-          font-size: calc(1.25rem * .75);
+          padding: calc(1.875rem * .75) .5rem;
+          font-size: calc(1.125rem * .75);
+          letter-spacing: calc(-.045rem * .75);
+          text-indent: calc(-.045rem * .75);
         }
 
         > mark {
@@ -412,108 +589,100 @@ main {
           color: #FC3435;
         }
       }
-    }
 
-    &.changes {
+      &.changes {
 
-      .table-wrapper {
-        width: 100%;
-        padding: 0 1.5rem;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: stretch;
-        gap: 2.5rem;
-        @include vp-lg {
-          padding: 0 calc(1.5rem * .9);
-          flex-direction: column;
-          align-items: center;
-        }
-        @include vp-md {
-          padding: 0 calc(1.5rem * .9);
-          flex-direction: column;
-          align-items: center;
-        }
-        @include vp-sm {
-          padding: 0 1rem;
-          flex-direction: column;
-          align-items: center;
-        }
-        @include vp-xs {
-          padding: 0;
-          flex-direction: column;
-          align-items: center;
-        }
-
-        > .table {
-          width: 50%;
+        .table-wrapper {
+          width: 100%;
+          padding: 0 1.5rem;
           display: flex;
-          flex-direction: column;
+          flex-direction: row;
           justify-content: start;
-          align-items: start;
-          gap: .75rem;
+          align-items: stretch;
+          gap: 2.5rem;
           @include vp-lg {
-            width: 100%;
-            gap: calc(.75rem * .9);
+            padding: 0 calc(1.5rem * .9);
+            flex-direction: column;
+            align-items: center;
+            gap: calc(1.875rem * .9);
           }
           @include vp-md {
-            width: 100%;
-            gap: calc(.75rem * .9);
+            padding: 0 calc(1.5rem * .9);
+            flex-direction: column;
+            align-items: center;
+            gap: calc(1.875rem * .9);
           }
           @include vp-sm {
-            width: 100%;
-            gap: calc(.75rem * .8);
+            padding: 0 1rem;
+            flex-direction: column;
+            align-items: center;
+            gap: calc(1.875rem * .8);
           }
           @include vp-xs {
-            width: 100%;
-            gap: .5rem;
+            padding: 0 .5rem;
+            flex-direction: column;
+            align-items: center;
+            gap: calc(1.875rem * .75);
           }
 
-          > .table-title {
-            width: 100%;
-            font-size: 1.25rem;
-            font-weight: bold;
-            color: #2E2E2E;
-            @include vp-lg {
-              font-size: calc(1.25rem * .9);
-            }
-            @include vp-md {
-              font-size: calc(1.25rem * .9);
-            }
-            @include vp-sm {
-              font-size: calc(1.25rem * .8);
-            }
-            @include vp-xs {
-              font-size: calc(1.25rem * .75);
-            }
-          }
-
-          > .table-body {
-            width: 100%;
+          > .table {
+            width: 50%;
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
             justify-content: start;
             align-items: start;
             gap: .75rem;
             @include vp-lg {
+              width: 100%;
               gap: calc(.75rem * .9);
             }
             @include vp-md {
+              width: 100%;
               gap: calc(.75rem * .9);
             }
             @include vp-sm {
+              width: 100%;
               gap: calc(.75rem * .8);
             }
             @include vp-xs {
-              gap: .125rem;
+              width: 100%;
+              gap: calc(.75rem * .75);
             }
 
-            > ul {
-              width: calc(100% / 3);
+            > .table-title {
+              width: 100%;
+              font-size: 1.125rem;
+              font-weight: bold;
+              letter-spacing: -.045rem;
+              text-indent: -.045rem;
+              @include vp-lg {
+                font-size: calc(1.125rem * .9);
+                letter-spacing: calc(-.045rem * .9);
+                text-indent: calc(-.045rem * .9);
+              }
+              @include vp-md {
+                font-size: calc(1.125rem * .9);
+                letter-spacing: calc(-.045rem * .9);
+                text-indent: calc(-.045rem * .9);
+              }
+              @include vp-sm {
+                font-size: calc(1.125rem * .8);
+                letter-spacing: calc(-.045rem * .8);
+                text-indent: calc(-.045rem * .8);
+              }
+              @include vp-xs {
+                font-size: calc(1.125rem * .75);
+                letter-spacing: calc(-.045rem * .75);
+                text-indent: calc(-.045rem * .75);
+              }
+            }
+
+            > .table-body {
+              width: 100%;
               display: flex;
-              flex-direction: column;
+              flex-direction: row;
               justify-content: start;
-              align-items: center;
+              align-items: start;
               gap: .75rem;
               @include vp-lg {
                 gap: calc(.75rem * .9);
@@ -525,470 +694,286 @@ main {
                 gap: calc(.75rem * .8);
               }
               @include vp-xs {
-                gap: .125rem;
+                gap: .25rem;
               }
 
-              > li {
-                width: 100%;
-                padding: .75rem 0;
+              > ul {
+                width: calc(100% / 3);
                 display: flex;
-                justify-content: center;
+                flex-direction: column;
+                justify-content: start;
                 align-items: center;
-                border: .0625rem solid;
-                border-radius: 4rem;
-                font-size: 1.25rem;
-                font-weight: 500;
+                gap: .75rem;
                 @include vp-lg {
-                  padding: calc(.75rem * .9) 0;
-                  font-size: calc(1.25rem * .9);
+                  gap: calc(.75rem * .9);
                 }
                 @include vp-md {
-                  padding: calc(.75rem * .9) 0;
-                  font-size: calc(1.25rem * .9);
+                  gap: calc(.75rem * .9);
                 }
                 @include vp-sm {
-                  padding: calc(.75rem * .8) 0;
-                  font-size: calc(1.25rem * .8);
+                  gap: calc(.75rem * .8);
                 }
                 @include vp-xs {
-                  padding: calc(.75rem * .75) 0;
-                  font-size: calc(1.25rem * .7);
-                  border-radius: .5rem;
+                  gap: .25rem;
                 }
+
+                > li {
+                  width: 100%;
+                  padding: .75rem 0;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  border: .0625rem solid;
+                  border-radius: 4rem;
+                  font-size: 1.125rem;
+                  font-weight: 500;
+                  letter-spacing: -.045rem;
+                  text-indent: -.045rem;
+                  @include vp-lg {
+                    padding: calc(.75rem * .9) 0;
+                    font-size: calc(1.125rem * .9);
+                    letter-spacing: calc(-.045rem * .9);
+                    text-indent: calc(-.045rem * .9);
+                  }
+                  @include vp-md {
+                    padding: calc(.75rem * .9) 0;
+                    font-size: calc(1.125rem * .9);
+                    letter-spacing: calc(-.045rem * .9);
+                    text-indent: calc(-.045rem * .9);
+                  }
+                  @include vp-sm {
+                    padding: calc(.75rem * .8) 0;
+                    font-size: calc(1.125rem * .8);
+                    letter-spacing: calc(-.045rem * .8);
+                    text-indent: calc(-.045rem * .8);
+                  }
+                  @include vp-xs {
+                    padding: calc(.75rem * .75) 0;
+                    font-size: calc(1.125rem * .75);
+                    letter-spacing: calc(-.045rem * .75);
+                    text-indent: calc(-.045rem * .75);
+                  }
+
+                  &.name {
+                    color: #FFFFFF;
+                  }
+
+                  &.special {
+                    border-color: #2E2E2E;
+                    color: #2E2E2E;
+                  }
+                }
+              }
+            }
+
+            &:first-of-type {
+
+              li {
+                border-color: #C8C8C8;
+                color: #C8C8C8;
 
                 &.name {
-                  color: #FFFFFF;
+                  background: #C8C8C8;
+                }
+              }
+            }
+
+            &:last-of-type {
+
+              li {
+                border-color: #FC3435;
+                color: #FC3435;
+
+                &.name {
+                  background: #FC3435;
                 }
               }
             }
           }
-
-          &.season23 {
-
-            li {
-              border-color: #C8C8C8;
-              color: #C8C8C8;
-
-              &.name {
-                background: #C8C8C8;
-              }
-            }
-          }
-
-          &.season24 {
-
-            li {
-              border-color: #FC3435;
-              color: #FC3435;
-
-              &.name {
-                background: #FC3435;
-              }
-            }
-          }
         }
       }
-    }
 
-    &.opinion {
+      &.opinion {
 
-      form {
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-        gap: .75rem;
-
-        > input {
-          width: calc((100% - .75rem) / 2);
-          padding: .75rem 1.5rem;
-          border: .0625rem solid #A4A4A4;
-          border-radius: .5rem;
-          outline: .0625rem solid transparent;
-          font-size: 1.25rem;
-          font-weight: 500;
-          @include vp-lg {
-            padding: calc(.75rem * .9) calc(1.5rem * .9);
-            font-size: calc(1.25rem * .9);
-          }
-          @include vp-md {
-            padding: calc(.75rem * .9) calc(1.5rem * .9);
-            font-size: calc(1.25rem * .9);
-          }
-          @include vp-sm {
-            padding: calc(.75rem * .8) 1rem;
-            font-size: calc(1.25rem * .8);
-          }
-          @include vp-xs {
-            padding: calc(.75rem * .75) 1rem;
-            font-size: calc(1.25rem * .75);
-          }
-
-          &:focus {
-            border-color: transparent;
-            outline-color: #FC3435;
-
-            &::placeholder {
-              opacity: 0;
-            }
-          }
-        }
-
-        > textarea {
+        form {
           width: 100%;
-          height: 16rem;
-          padding: .75rem 1.5rem;
-          border: .0625rem solid #A4A4A4;
-          border-radius: .5rem;
-          outline: .0625rem solid transparent;
-          font-size: 1.25rem;
-          font-weight: 500;
-          resize: none;
-          @include vp-lg {
-            height: calc(16rem * .9);
-            padding: calc(.75rem * .9) calc(1.5rem * .9);
-            font-size: calc(1.25rem * .9);
-          }
-          @include vp-md {
-            height: calc(16rem * .9);
-            padding: calc(.75rem * .9) calc(1.5rem * .9);
-            font-size: calc(1.25rem * .9);
-          }
-          @include vp-sm {
-            height: calc(16rem * .8);
-            padding: calc(.75rem * .8) 1rem;
-            font-size: calc(1.25rem * .8);
-          }
-          @include vp-xs {
-            height: calc(16rem * .75);
-            padding: calc(.75rem * .75) 1rem;
-            font-size: calc(1.25rem * .75);
-          }
-
-          &:focus {
-            border-color: transparent;
-            outline-color: #FC3435;
-
-            &::placeholder {
-              opacity: 0;
-            }
-          }
-        }
-
-        > .explain {
-          width: 100%;
-          padding: .75rem 1.5rem;
+          padding: 0 1.5rem;
           display: flex;
-          flex-direction: column;
-          justify-content: start;
-          align-items: start;
-          background: #F3F3F3;
-          font-size: 1.25rem;
-          font-weight: 500;
-          color: #7E7E7E;
-          @include vp-lg {
-            padding: calc(.75rem * .9) calc(1.5rem * .9);
-            font-size: calc(1.25rem * .9);
-          }
-          @include vp-md {
-            padding: calc(.75rem * .9) calc(1.5rem * .9);
-            font-size: calc(1.25rem * .9);
-          }
-          @include vp-sm {
-            padding: calc(.75rem * .8) 1rem;
-            font-size: calc(1.25rem * .8);
-          }
-          @include vp-xs {
-            padding: calc(.75rem * .75) 1rem;
-            font-size: calc(1.25rem * .75);
-          }
-
-          > span:first-of-type {
-            font-weight: bold;
-            color: #373737;
-          }
-
-          > li {
-            list-style: inside;
-
-            &::marker {
-              content: " - ";
-            }
-          }
-        }
-
-        > button {
-          padding: 1rem 3.125rem;
-          position: relative;
-          border: none;
-          outline: none;
-          border-radius: 3rem;
-          background: #FC3435;
-          font-size: 1.25rem;
-          font-weight: 500;
-          color: #FFFFFF;
-          @include vp-lg {
-            padding: .9rem calc(3.125rem * .9);
-            font-size: calc(1.25rem * .9);
-          }
-          @include vp-md {
-            padding: .9rem calc(3.125rem * .9);
-            font-size: calc(1.25rem * .9);
-          }
-          @include vp-sm {
-            padding: .8rem calc(3.125rem * .8);
-            font-size: calc(1.25rem * .8);
-          }
-          @include vp-xs {
-            padding: .75rem calc(3.125rem * .75);
-            font-size: calc(1.25rem * .75);
-          }
-        }
-      }
-    }
-
-    &.introduce {
-
-      .swiper {
-        width: 100%;
-
-        .swiper-slide {
-          width: 100%;
-          display: flex;
-          flex-direction: column;
-          justify-content: start;
+          flex-direction: row;
+          flex-wrap: wrap;
+          justify-content: center;
           align-items: center;
-          gap: 1.875rem;
+          gap: .75rem;
           @include vp-lg {
-            gap: calc(1.875rem * .9);
+            padding: 0 calc(1.5rem * .9);
+            gap: calc(.75rem * .9);
           }
           @include vp-md {
-            gap: calc(1.875rem * .9);
+            padding: 0 calc(1.5rem * .9);
+            gap: calc(.75rem * .9);
           }
           @include vp-sm {
-            gap: calc(1.875rem * .8);
+            padding: 0 1rem;
+            gap: calc(.75rem * .8);
           }
           @include vp-xs {
-            gap: calc(1.875rem * .75);
+            padding: 0 .5rem;
+            gap: calc(.75rem * .75);
           }
 
-          > .section-title {
-            width: 100%;
-            padding: 1.5rem;
-            border-bottom: .125rem solid #373737;
-            font-size: 1.875rem;
-            color: #2E2E2E;
-            @include vp-lg {
-              padding: calc(1.5rem * .9);
-              font-size: calc(1.875rem * .9);
-            }
-            @include vp-md {
-              padding: calc(1.5rem * .9);
-              font-size: calc(1.875rem * .9);
-            }
-            @include vp-sm {
-              padding: 1rem;
-              font-size: calc(1.875rem * .8);
-            }
-            @include vp-xs {
-              padding: 1rem;
-              font-size: calc(1.875rem * .75);
-            }
-
-            > sub {
-              padding: .25rem 1rem;
-              border-radius: 2rem;
-              background: #2E2E2E;
-              font-size: 1.125rem;
-              color: #EBEB2B;
-              @include vp-lg {
-                padding: calc(.25rem * .9) .9rem;
-                font-size: calc(1.125rem * .9);
-              }
-              @include vp-md {
-                padding: calc(.25rem * .9) .9rem;
-                font-size: calc(1.125rem * .9);
-              }
-              @include vp-sm {
-                padding: calc(.25rem * .8) .8rem;
-                font-size: calc(1.125rem * .8);
-              }
-              @include vp-xs {
-                padding: calc(.25rem * .75) .75rem;
-                font-size: calc(1.125rem * .75);
-              }
-            }
-          }
-
-          > .notice {
-            width: 100%;
-            margin-top: -1.875rem;
-            padding: 1.75rem;
-            display: flex;
-            flex-direction: row;
-            justify-content: start;
-            align-items: center;
-            gap: 1rem;
-            background: #FFF3F3;
-            @include vp-lg {
-              margin-top: calc(-1.875rem * .9);
-              flex-direction: column;
-              gap: .9rem;
-            }
-            @include vp-md {
-              margin-top: calc(-1.875rem * .9);
-              flex-direction: column;
-              gap: .9rem;
-            }
-            @include vp-sm {
-              margin-top: calc(-1.875rem * .8);
-              flex-direction: column;
-              gap: .8rem;
-            }
-            @include vp-xs {
-              margin-top: calc(-1.875rem * .75);
-              flex-direction: column;
-              gap: .75rem;
-            }
-
-            > h3 {
-              padding: .5rem 3.125rem;
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              border: .0625rem solid #FC3435;
-              border-radius: 4rem;
-              font-size: 1.25rem;
-              font-weight: 500;
-              color: #FC3435;
-              @include vp-lg {
-                padding: calc(.5rem * .9) calc(3.125rem * .9);
-                font-size: calc(1.25rem * .9);
-              }
-              @include vp-md {
-                padding: calc(.5rem * .9) calc(3.125rem * .9);
-                font-size: calc(1.25rem * .9);
-              }
-              @include vp-sm {
-                padding: calc(.5rem * .8) calc(3.125rem * .8);
-                font-size: calc(1.25rem * .8);
-              }
-              @include vp-xs {
-                padding: calc(.5rem * .75) calc(3.125rem * .75);
-                font-size: calc(1.25rem * .75);
-              }
-            }
-
-            > span {
-              font-size: 1.25rem;
-              font-weight: bold;
-              color: #3A3A3A;
-              @include vp-lg {
-                font-size: calc(1.25rem * .9);
-              }
-              @include vp-md {
-                font-size: calc(1.25rem * .9);
-              }
-              @include vp-sm {
-                font-size: calc(1.25rem * .8);
-              }
-              @include vp-xs {
-                font-size: calc(1.25rem * .75);
-              }
-            }
-          }
-
-          > .summary {
-            width: 100%;
-            padding: 0 1.5rem;
-            font-size: 1.25rem;
+          > input {
+            width: calc((100% - .75rem) / 2);
+            padding: .75rem 1.5rem;
+            border: .0625rem solid #A4A4A4;
+            border-radius: .5rem;
+            outline: .0625rem solid transparent;
+            font-size: 1.125rem;
             font-weight: 500;
-            color: #7E7E7E;
+            letter-spacing: -.045rem;
+            text-indent: -.045rem;
+            transition: all .3s ease;
             @include vp-lg {
-              padding: 0 calc(1.5rem * .9);
-              font-size: calc(1.25rem * .9);
+              width: calc((100% - (.75rem * .9)) / 2);
+              padding: calc(.75rem * .9) calc(1.5rem * .9);
+              font-size: calc(1.125rem * .9);
+              letter-spacing: calc(-.045rem * .9);
+              text-indent: calc(-.045rem * .9);
             }
             @include vp-md {
-              padding: 0 calc(1.5rem * .9);
-              font-size: calc(1.25rem * .9);
+              width: calc((100% - (.75rem * .9)) / 2);
+              padding: calc(.75rem * .9) calc(1.5rem * .9);
+              font-size: calc(1.125rem * .9);
+              letter-spacing: calc(-.045rem * .9);
+              text-indent: calc(-.045rem * .9);
             }
             @include vp-sm {
-              padding: 0 1rem;
-              font-size: calc(1.25rem * .8);
+              width: calc((100% - (.75rem * .8)) / 2);
+              padding: calc(.75rem * .8) 1rem;
+              font-size: calc(1.125rem * .8);
+              letter-spacing: calc(-.045rem * .8);
+              text-indent: calc(-.045rem * .8);
             }
             @include vp-xs {
-              padding: 0 1rem;
-              font-size: calc(1.25rem * .75);
+              width: 100%;
+              padding: calc(.75rem * .75) 1rem;
+              font-size: calc(1.125rem * .75);
+              letter-spacing: calc(-.045rem * .75);
+              text-indent: calc(-.045rem * .75);
             }
 
-            > mark {
-              background: none;
-              color: #FC3435;
+            &::placeholder {
+              transition: all .3s ease;
+            }
+
+            &:focus {
+              border-color: transparent;
+              outline-color: #FC3435;
+              &::placeholder {
+                opacity: 0;
+              }
+            }
+          }
+
+          > textarea {
+            width: 100%;
+            height: 16rem;
+            padding: .75rem 1.5rem;
+            border: .0625rem solid #A4A4A4;
+            border-radius: .5rem;
+            outline: .0625rem solid transparent;
+            font-size: 1.125rem;
+            font-weight: 500;
+            letter-spacing: -.045rem;
+            text-indent: -.045rem;
+            transition: all .3s ease;
+            resize: none;
+            @include vp-lg {
+              height: calc(16rem * .9);
+              padding: calc(.75rem * .9) calc(1.5rem * .9);
+              font-size: calc(1.125rem * .9);
+              letter-spacing: calc(-.045rem * .9);
+              text-indent: calc(-.045rem * .9);
+            }
+            @include vp-md {
+              height: calc(16rem * .9);
+              padding: calc(.75rem * .9) calc(1.5rem * .9);
+              font-size: calc(1.125rem * .9);
+              letter-spacing: calc(-.045rem * .9);
+              text-indent: calc(-.045rem * .9);
+            }
+            @include vp-sm {
+              height: calc(16rem * .8);
+              padding: calc(.75rem * .8) 1rem;
+              font-size: calc(1.125rem * .8);
+              letter-spacing: calc(-.045rem * .8);
+              text-indent: calc(-.045rem * .8);
+            }
+            @include vp-xs {
+              height: calc(16rem * .75);
+              padding: calc(.75rem * .75) .5rem;
+              font-size: calc(1.125rem * .75);
+              letter-spacing: calc(-.045rem * .75);
+              text-indent: calc(-.045rem * .75);
+            }
+
+            &::placeholder {
+              transition: all .3s ease;
+            }
+
+            &:focus {
+              border-color: transparent;
+              outline-color: #FC3435;
+              &::placeholder {
+                opacity: 0;
+              }
             }
           }
 
           > .explain {
             width: 100%;
-            padding: 2.5rem 1.5rem;
+            padding: .75rem 1.5rem;
             display: flex;
             flex-direction: column;
             justify-content: start;
             align-items: start;
+            background: #F3F3F3;
+            font-size: 1rem;
+            font-weight: 500;
+            letter-spacing: -.04rem;
+            text-indent: -.04rem;
+            color: #7E7E7E;
             @include vp-lg {
-              padding: calc(2.5rem * .9) calc(1.5rem * .9);
+              padding: calc(.75rem * .9) calc(1.5rem * .9);
+              font-size: .9rem;
+              letter-spacing: calc(-.04rem * .9);
+              text-indent: calc(-.04rem * .9);
             }
             @include vp-md {
-              padding: calc(2.5rem * .9) calc(1.5rem * .9);
+              padding: calc(.75rem * .9) calc(1.5rem * .9);
+              font-size: .9rem;
+              letter-spacing: calc(-.04rem * .9);
+              text-indent: calc(-.04rem * .9);
             }
             @include vp-sm {
-              padding: calc(2.5rem * .8) 1rem;
+              padding: calc(.75rem * .8) 1rem;
+              font-size: .8rem;
+              letter-spacing: calc(-.04rem * .8);
+              text-indent: calc(-.04rem * .8);
             }
             @include vp-xs {
-              padding: calc(2.5rem * .75) 1rem;
+              padding: calc(.75rem * .75) .5rem;
+              font-size: .75rem;
+              letter-spacing: calc(-.04rem * .75);
+              text-indent: calc(-.04rem * .75);
             }
 
-            > span {
-              margin-bottom: 1rem;
-              font-size: 1.25rem;
+            > span:first-of-type {
               font-weight: bold;
-              color: #2E2E2E;
-              @include vp-lg {
-                margin-bottom: .9rem;
-                font-size: calc(1.25rem * .9);
-              }
-              @include vp-md {
-                margin-bottom: .9rem;
-                font-size: calc(1.25rem * .9);
-              }
-              @include vp-sm {
-                margin-bottom: .8rem;
-                font-size: calc(1.25rem * .8);
-              }
-              @include vp-xs {
-                margin-bottom: .75rem;
-                font-size: calc(1.25rem * .75);
-              }
+              color: #373737;
             }
 
             > li {
               list-style: inside;
-              font-size: 1.25rem;
-              font-weight: 500;
-              color: #7E7E7E;
-              @include vp-lg {
-                font-size: calc(1.25rem * .9);
-              }
-              @include vp-md {
-                font-size: calc(1.25rem * .9);
-              }
-              @include vp-sm {
-                font-size: calc(1.25rem * .8);
-              }
-              @include vp-xs {
-                font-size: calc(1.25rem * .75);
-              }
 
               &::marker {
                 content: " - ";
@@ -996,255 +981,468 @@ main {
             }
           }
 
-          &:nth-of-type(1) {
-            background: rgba(255, 255, 255, .3) url("../images/slide01.png") no-repeat right bottom / 43.75rem auto;
-            background-blend-mode: color;
-            @include vp-lg {
-              background: none;
-            }
-            @include vp-md {
-              background: none;
-            }
-            @include vp-sm {
-              background: none;
-            }
-            @include vp-xs {
-              background: none;
-            }
-          }
-
-          &:nth-of-type(2) {
-            background: rgba(255, 255, 255, .3) url("../images/slide02.png") no-repeat right bottom / 43.75rem auto;
-            background-blend-mode: color;
-            @include vp-lg {
-              background: none;
-            }
-            @include vp-md {
-              background: none;
-            }
-            @include vp-sm {
-              background: none;
-            }
-            @include vp-xs {
-              background: none;
-            }
-          }
-
-          &:nth-of-type(3) {
-            background: rgba(255, 255, 255, .3) url("../images/slide03.png") no-repeat right bottom / 26.25rem auto;
-            background-blend-mode: color;
-            @include vp-lg {
-              background: none;
-            }
-            @include vp-md {
-              background: none;
-            }
-            @include vp-sm {
-              background: none;
-            }
-            @include vp-xs {
-              background: none;
-            }
-          }
-        }
-      }
-
-      .swiper-control {
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        gap: 1rem;
-
-        > a {
-          width: 3rem;
-          aspect-ratio: 1 / 1;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          @include vp-lg {
-            width: 2.5rem;
-          }
-          @include vp-md {
-            width: 2.5rem;
-          }
-          @include vp-sm {
-            width: 2rem;
-          }
-          @include vp-xs {
-            width: 2rem;
-          }
-
-          > img {
-            width: 100%;
-          }
-
-          &.swiper-button-disabled {
-            opacity: .4;
-          }
-        }
-
-        > .swiper-pagination {
-          width: auto;
-          height: .25rem;
-          position: unset;
-          flex: 1;
-          border-radius: .25rem;
-          background: #C8C8C8;
-
-          > .swiper-pagination-progressbar-fill {
+          > button {
+            padding: 1rem 3.125rem;
+            border: .0625rem solid #FC3435;
+            border-radius: 3rem;
+            outline: none;
             background: #FC3435;
-          }
-        }
-      }
-    }
-
-    &.next {
-      margin-top: 2rem;
-      background: #F6F6F6;
-      @include vp-lg {
-        margin-top: calc(2rem * .9);
-      }
-      @include vp-md {
-        margin-top: calc(2rem * .9);
-      }
-      @include vp-sm {
-        margin-top: calc(2rem * .8);
-      }
-      @include vp-xs {
-        margin-top: calc(2rem * .75);
-      }
-
-      > .section-inner {
-        padding: 6.25rem 0;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        @include vp-lg {
-          padding: calc(6.25rem * .9) 0;
-        }
-        @include vp-md {
-          padding: calc(6.25rem * .9) 0;
-        }
-        @include vp-sm {
-           padding: 3.125rem 0;
-           flex-direction: column;
-         }
-        @include vp-xs {
-          padding: 3.125rem 0;
-          flex-direction: column;
-        }
-
-        > .text {
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: start;
-          @include vp-sm {
-            align-items: center;
-            text-align: center;
-          }
-          @include vp-xs {
-            align-items: center;
-            text-align: center;
-          }
-
-          > h3 {
-            margin-bottom: .5rem;
-            font-size: 1.875rem;
-            color: #FC3435;
-            @include vp-lg {
-              margin-bottom: calc(.5rem * .9);
-              font-size: calc(1.875rem * .9);
-            }
-            @include vp-md {
-              margin-bottom: calc(.5rem * .9);
-              font-size: calc(1.875rem * .9);
-            }
-            @include vp-sm {
-              margin-bottom: calc(.5rem * .8);
-              font-size: calc(1.875rem * .8);
-            }
-            @include vp-xs {
-              margin-bottom: calc(.5rem * .75);
-              font-size: calc(1.875rem * .75);
-            }
-          }
-
-          > h2 {
-            margin-bottom: 1.25rem;
-            font-size: 3.125rem;
-            color: #2E2E2E;
-            @include vp-lg {
-              margin-bottom: calc(1.25rem * .9);
-              font-size: calc(3.125rem * .9);
-            }
-            @include vp-md {
-              margin-bottom: calc(1.25rem * .9);
-              font-size: calc(3.125rem * .9);
-            }
-            @include vp-sm {
-              margin-bottom: calc(1.25rem * .8);
-              font-size: calc(3.125rem * .8);
-            }
-            @include vp-xs {
-              margin-bottom: calc(1.25rem * .75);
-              font-size: calc(3.125rem * .75);
-            }
-          }
-
-          > span {
-            font-size: 1.25rem;
+            font-size: 1.125rem;
             font-weight: 500;
-            color: #7E7E7E;
+            letter-spacing: -.045rem;
+            text-indent: -.045rem;
+            color: #FFFFFF;
+            transition: all .3s ease;
             @include vp-lg {
-              font-size: calc(1.25rem * .9);
+              padding: .9rem calc(3.125rem * .9);
+              font-size: calc(1.125rem * .9);
+              letter-spacing: calc(-.045rem * .9);
+              text-indent: calc(-.045rem * .9);
             }
             @include vp-md {
-              font-size: calc(1.25rem * .9);
+              padding: .9rem calc(3.125rem * .9);
+              font-size: calc(1.125rem * .9);
+              letter-spacing: calc(-.045rem * .9);
+              text-indent: calc(-.045rem * .9);
             }
             @include vp-sm {
-              font-size: calc(1.25rem * .8);
+              padding: .8rem calc(3.125rem * .8);
+              font-size: calc(1.125rem * .8);
+              letter-spacing: calc(-.045rem * .8);
+              text-indent: calc(-.045rem * .8);
             }
             @include vp-xs {
-              font-size: calc(1.25rem * .75);
+              padding: .75rem calc(3.125rem * .75);
+              font-size: calc(1.125rem * .75);
+              letter-spacing: calc(-.045rem * .75);
+              text-indent: calc(-.045rem * .75);
+            }
+
+            &:hover {
+              background: #FFFFFF;
+              color: #FC3435;
+            }
+          }
+        }
+      }
+
+      &.introduce {
+
+        .swiper {
+          width: 100%;
+
+          .swiper-slide {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+            align-items: center;
+
+            > .slide-body {
+              width: 100%;
+              display: flex;
+              flex-direction: row;
+              justify-content: start;
+              align-items: center;
+              @include vp-lg {
+                flex-direction: column-reverse;
+              }
+              @include vp-md {
+                flex-direction: column-reverse;
+              }
+              @include vp-sm {
+                flex-direction: column-reverse;
+              }
+              @include vp-xs {
+                flex-direction: column-reverse;
+              }
+
+              > .text {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: start;
+                @include vp-lg {
+                  width: 100%;
+                  flex: unset;
+                }
+                @include vp-md {
+                  width: 100%;
+                  flex: unset;
+                }
+                @include vp-sm {
+                  width: 100%;
+                  flex: unset;
+                }
+                @include vp-xs {
+                  width: 100%;
+                  flex: unset;
+                }
+
+                > .explain {
+                  width: 100%;
+                  padding: 2.5rem 1.5rem;
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: start;
+                  align-items: start;
+                  @include vp-lg {
+                    padding: calc(2.5rem * .9) calc(1.5rem * .9);
+                  }
+                  @include vp-md {
+                    padding: calc(2.5rem * .9) calc(1.5rem * .9);
+                  }
+                  @include vp-sm {
+                    padding: calc(2.5rem * .8) 1rem;
+                  }
+                  @include vp-xs {
+                    padding: calc(2.5rem * .75) 1rem;
+                  }
+
+                  > span {
+                    margin-bottom: 1rem;
+                    font-size: 1.125rem;
+                    font-weight: bold;
+                    letter-spacing: -.045rem;
+                    text-indent: -.045rem;
+                    color: #2E2E2E;
+                    @include vp-lg {
+                      margin-bottom: .9rem;
+                      font-size: calc(1.125rem * .9);
+                      letter-spacing: calc(-.045rem * .9);
+                      text-indent: calc(-.045rem * .9);
+                    }
+                    @include vp-md {
+                      margin-bottom: .9rem;
+                      font-size: calc(1.125rem * .9);
+                      letter-spacing: calc(-.045rem * .9);
+                      text-indent: calc(-.045rem * .9);
+                    }
+                    @include vp-sm {
+                      margin-bottom: .8rem;
+                      font-size: calc(1.125rem * .8);
+                      letter-spacing: calc(-.045rem * .8);
+                      text-indent: calc(-.045rem * .8);
+                    }
+                    @include vp-xs {
+                      margin-bottom: .75rem;
+                      font-size: calc(1.125rem * .75);
+                      letter-spacing: calc(-.045rem * .75);
+                      text-indent: calc(-.045rem * .75);
+                    }
+                  }
+
+                  > li {
+                    list-style: inside;
+                    font-size: 1.125rem;
+                    font-weight: 500;
+                    letter-spacing: -.045rem;
+                    text-indent: -.045rem;
+                    color: #7E7E7E;
+                    @include vp-lg {
+                      font-size: calc(1.125rem * .9);
+                      letter-spacing: calc(-.045rem * .9);
+                      text-indent: calc(-.045rem * .9);
+                    }
+                    @include vp-md {
+                      font-size: calc(1.125rem * .9);
+                      letter-spacing: calc(-.045rem * .9);
+                      text-indent: calc(-.045rem * .9);
+                    }
+                    @include vp-sm {
+                      font-size: calc(1.125rem * .8);
+                      letter-spacing: calc(-.045rem * .8);
+                      text-indent: calc(-.045rem * .8);
+                    }
+                    @include vp-xs {
+                      font-size: calc(1.125rem * .75);
+                      letter-spacing: calc(-.045rem * .75);
+                      text-indent: calc(-.045rem * .75);
+                    }
+
+                    &::marker {
+                      content: " - ";
+                    }
+                  }
+                }
+              }
+
+              > img {
+                width: 45%;
+                aspect-ratio: 16 / 9;
+                padding: 1.5rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                object-fit: contain;
+                @include vp-lg {
+                  width: 100%;
+                  max-width: 42.5rem;
+                  padding: calc(1.5rem * .9);
+                }
+                @include vp-md {
+                  width: 100%;
+                  max-width: 42.5rem;
+                  padding: calc(1.5rem * .9);
+                }
+                @include vp-sm {
+                  width: 100%;
+                  max-width: 30rem;
+                  padding: calc(1.5rem * .8);
+                }
+                @include vp-xs {
+                  width: 100%;
+                  max-width: 20rem;
+                  padding: calc(1.5rem * .75);
+                }
+              }
             }
           }
         }
 
-        > a {
-          padding: 1.5rem 3rem;
+        .swiper-control {
+          width: 100%;
           display: flex;
           flex-direction: row;
           justify-content: center;
           align-items: center;
-          gap: 1.5rem;
-          border-radius: 4rem;
-          background: #CBCBCB;
-          font-size: 1.5rem;
-          font-weight: 500;
-          color: #FFFFFF;
+          gap: 1rem;
+
+          > a {
+            width: 3rem;
+            aspect-ratio: 1 / 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            @include vp-lg {
+              width: 2.5rem;
+            }
+            @include vp-md {
+              width: 2.5rem;
+            }
+            @include vp-sm {
+              width: 2rem;
+            }
+            @include vp-xs {
+              width: 2rem;
+            }
+
+            > img {
+              width: 100%;
+            }
+
+            &.swiper-button-disabled {
+              opacity: .4;
+            }
+          }
+
+          > .swiper-pagination {
+            width: auto;
+            height: .25rem;
+            position: unset;
+            flex: 1;
+            border-radius: .25rem;
+            background: #C8C8C8;
+            > .swiper-pagination-progressbar-fill {
+              background: #FC3435;
+            }
+          }
+        }
+      }
+
+      &.next {
+        margin-top: 2rem;
+        background: #F6F6F6;
+        @include vp-lg {
+          margin-top: 1.8rem;
+        }
+        @include vp-md {
+          margin-top: 1.8rem;
+        }
+        @include vp-sm {
+          margin-top: 1.6rem;
+        }
+        @include vp-xs {
+          margin-top: 1.5rem;
+        }
+
+        > .section-inner {
+          padding: 6.25rem 0;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+          gap: 1.875rem;
           @include vp-lg {
-            padding: calc(1.5rem * .9) calc(3rem * .9);
-            gap: calc(1.5rem * .9);
-            font-size: calc(1.5rem * .9);
+            padding: calc(6.25rem * .9) 0;
+            gap: calc(1.875rem * .9);
           }
           @include vp-md {
-            padding: calc(1.5rem * .9) calc(3rem * .9);
-            gap: calc(1.5rem * .9);
-            font-size: calc(1.5rem * .9);
+            padding: calc(6.25rem * .9) 0;
+            gap: calc(1.875rem * .9);
           }
           @include vp-sm {
-            padding: calc(1.5rem * .8) calc(3rem * .8);
-            gap: calc(1.5rem * .8);
-            font-size: calc(1.5rem * .8);
+            padding: 3.125rem 0;
+            flex-direction: column;
+            gap: calc(1.875rem * .8);
           }
           @include vp-xs {
-            padding: calc(1.5rem * .75) calc(3rem * .75);
-            gap: calc(1.5rem * .75);
-            font-size: calc(1.5rem * .75);
+            padding: 3.125rem 0;
+            flex-direction: column;
+            gap: calc(1.875rem * .75);
+          }
+
+          > .text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: start;
+            @include vp-sm {
+              align-items: center;
+              text-align: center;
+            }
+            @include vp-xs {
+              align-items: center;
+              text-align: center;
+            }
+
+            > h3 {
+              margin-bottom: .5rem;
+              font-family: "GmarketSans", sans-serif;
+              font-size: 1.875rem;
+              letter-spacing: -.075rem;
+              text-indent: -.075rem;
+              color: #FC3435;
+              @include vp-lg {
+                margin-bottom: calc(.5rem * .9);
+                font-size: calc(1.875rem * .9);
+                letter-spacing: calc(-.075rem * .9);
+                text-indent: calc(-.075rem * .9);
+              }
+              @include vp-md {
+                margin-bottom: calc(.5rem * .9);
+                font-size: calc(1.875rem * .9);
+                letter-spacing: calc(-.075rem * .9);
+                text-indent: calc(-.075rem * .9);
+              }
+              @include vp-sm {
+                margin-bottom: calc(.5rem * .8);
+                font-size: calc(1.875rem * .8);
+                letter-spacing: calc(-.075rem * .8);
+                text-indent: calc(-.075rem * .8);
+              }
+              @include vp-xs {
+                margin-bottom: calc(.5rem * .75);
+                font-size: calc(1.875rem * .75);
+                letter-spacing: calc(-.075rem * .75);
+                text-indent: calc(-.075rem * .75);
+              }
+            }
+
+            > h2 {
+              margin-bottom: 1.25rem;
+              font-size: 3.125rem;
+              letter-spacing: -.125rem;
+              text-indent: -.125rem;
+              color: #2E2E2E;
+              @include vp-lg {
+                margin-bottom: calc(1.25rem * .9);
+                font-size: calc(3.125rem * .9);
+                letter-spacing: calc(-.125rem * .9);
+                text-indent: calc(-.125rem * .9);
+              }
+              @include vp-md {
+                margin-bottom: calc(1.25rem * .9);
+                font-size: calc(3.125rem * .9);
+                letter-spacing: calc(-.125rem * .9);
+                text-indent: calc(-.125rem * .9);
+              }
+              @include vp-sm {
+                margin-bottom: calc(1.25rem * .8);
+                font-size: calc(3.125rem * .8);
+                letter-spacing: calc(-.125rem * .8);
+                text-indent: calc(-.125rem * .8);
+              }
+              @include vp-xs {
+                margin-bottom: calc(1.25rem * .75);
+                font-size: calc(3.125rem * .75);
+                letter-spacing: calc(-.125rem * .75);
+                text-indent: calc(-.125rem * .75);
+              }
+            }
+
+            > span {
+              font-size: 1.25rem;
+              font-weight: 500;
+              letter-spacing: -.05rem;
+              text-indent: -.05rem;
+              color: #7E7E7E;
+              @include vp-lg {
+                font-size: calc(1.25rem * .9);
+                letter-spacing: -.045rem;
+                text-indent: -.045rem;
+              }
+              @include vp-md {
+                font-size: calc(1.25rem * .9);
+                letter-spacing: -.045rem;
+                text-indent: -.045rem;
+              }
+              @include vp-sm {
+                font-size: calc(1.25rem * .8);
+                letter-spacing: -.04rem;
+                text-indent: -.04rem;
+              }
+              @include vp-xs {
+                font-size: calc(1.25rem * .75);
+                letter-spacing: -.0375rem;
+                text-indent: -.0375rem;
+              }
+            }
+          }
+
+          > a {
+            padding: 1.5rem 3rem;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 1.5rem;
+            border-radius: 4rem;
+            background: #CBCBCB;
+            font-size: 1.5rem;
+            font-weight: 500;
+            letter-spacing: -.06rem;
+            text-indent: -.06rem;
+            color: #FFFFFF;
+            @include vp-lg {
+              padding: calc(1.5rem * .9) calc(3rem * .9);
+              gap: calc(1.5rem * .9);
+              font-size: calc(1.5rem * .9);
+              letter-spacing: calc(-.06rem * .9);
+              text-indent: calc(-.06rem * .9);
+            }
+            @include vp-md {
+              padding: calc(1.5rem * .9) calc(3rem * .9);
+              gap: calc(1.5rem * .9);
+              font-size: calc(1.5rem * .9);
+              letter-spacing: calc(-.06rem * .9);
+              text-indent: calc(-.06rem * .9);
+            }
+            @include vp-sm {
+              padding: calc(1.5rem * .8) calc(3rem * .8);
+              gap: calc(1.5rem * .8);
+              font-size: calc(1.5rem * .8);
+              letter-spacing: calc(-.06rem * .8);
+              text-indent: calc(-.06rem * .8);
+            }
+            @include vp-xs {
+              padding: calc(1.5rem * .75) calc(3rem * .75);
+              gap: calc(1.5rem * .75);
+              font-size: calc(1.5rem * .75);
+              letter-spacing: calc(-.06rem * .75);
+              text-indent: calc(-.06rem * .75);
+            }
           }
 
           > img {
@@ -1266,177 +1464,218 @@ main {
       }
     }
   }
-}
 
-footer {
-  width: 100%;
-  padding: 0 2rem;
-  z-index: 9997;
-  background: #0F0F0F;
-  @include vp-lg {
-    padding: 0 1.5rem;
-  }
-  @include vp-md {
-    padding: 0 1.5rem;
-  }
-  @include vp-sm {
-    padding: 0 1rem;
-  }
-  @include vp-xs {
-    padding: 0 1rem;
-  }
-
-  > .footer-inner {
+  > footer {
     width: 100%;
-    max-width: 90rem;
-    margin: 0 auto;
-    padding: 3.125rem 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: start;
-    gap: 3.125rem;
+    padding: 0 2rem;
+    z-index: 9995;
+    background: #0F0F0F;
     @include vp-lg {
-      padding: calc(3.125rem * .9) 0;
-      gap: calc(3.125rem * .9);
+      padding: 0 1.5rem;
     }
     @include vp-md {
-      padding: calc(3.125rem * .9) 0;
-      gap: calc(3.125rem * .9);
+      padding: 0 1.5rem;
     }
     @include vp-sm {
-      padding: calc(3.125rem * .8) 0;
-      gap: calc(3.125rem * .8);
+      padding: 0 1rem;
     }
     @include vp-xs {
-      padding: calc(3.125rem * .75) 0;
-      gap: calc(3.125rem * .75);
+      padding: 0 1rem;
     }
 
-    > .info {
-      font-size: 1rem;
-      line-height: 160%;
-      color: #9C9C9C;
+    > .footer-inner {
+      width: 100%;
+      max-width: 90rem;
+      margin: 0 auto;
+      padding: 3.125rem 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      align-items: start;
+      gap: 3.125rem;
       @include vp-lg {
-        font-size: .9rem;
+        padding: calc(3.125rem * .9) 0;
+        gap: calc(3.125rem * .9);
       }
       @include vp-md {
-        font-size: .9rem;
+        padding: calc(3.125rem * .9) 0;
+        gap: calc(3.125rem * .9);
       }
       @include vp-sm {
-        font-size: .8rem;
+        padding: calc(3.125rem * .8) 0;
+        gap: calc(3.125rem * .8);
       }
       @include vp-xs {
-        font-size: .75rem;
+        padding: calc(3.125rem * .75) 0;
+        gap: calc(3.125rem * .75);
       }
 
-      > p:first-of-type {
-        font-weight: bold;
-        color: #FFFFFF;
+      > .info {
+        font-size: 1rem;
+        line-height: 160%;
+        letter-spacing: -.04rem;
+        text-indent: -.04rem;
+        color: #9C9C9C;
+        @include vp-lg {
+          font-size: .9rem;
+          letter-spacing: -.036rem;
+          text-indent: -.036rem;
+        }
+        @include vp-md {
+          font-size: .9rem;
+          letter-spacing: -.036rem;
+          text-indent: -.036rem;
+        }
+        @include vp-sm {
+          font-size: .8rem;
+          letter-spacing: -.032rem;
+          text-indent: -.032rem;
+        }
+        @include vp-xs {
+          font-size: .75rem;
+          letter-spacing: -.034rem;
+          text-indent: -.034rem;
+        }
+
+        > p:first-of-type {
+          font-weight: bold;
+          color: #FFFFFF;
+        }
       }
     }
   }
-}
 
-.alert {
-  width: 100%;
-  height: 100%;
-  padding: 0 2rem;
-  position: fixed;
-  top: 0;
-  left: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: -9999;
-  background: rgba(0, 0, 0, .6);
-  backdrop-filter: blur(.25rem);
-  @include vp-lg {
-    padding: 0 1.5rem;
-  }
-  @include vp-md {
-    padding: 0 1.5rem;
-  }
-  @include vp-sm {
-    padding: 0 1rem;
-  }
-  @include vp-xs {
-    padding: 0 1rem;
+  > .blur {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -9999;
+    background: rgba(0, 0, 0, .4);
+    backdrop-filter: blur(.25rem);
+    opacity: 0;
+
+    &.on {
+      z-index: 9998;
+    }
   }
 
-  > .alert-inner {
+  > aside {
     width: 100%;
     max-width: 30rem;
-    padding: 1.5rem;
-    aspect-ratio: 4 / 3;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    border: .125rem solid #FC3435;
-    border-radius: 1rem;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    z-index: 9998;
     background: #FFFFFF;
-    @include vp-lg {
-      padding: calc(1.5rem * .9);
-    }
-    @include vp-md {
-      padding: calc(1.5rem * .9);
-    }
-    @include vp-sm {
-      padding: 1rem;
-    }
-    @include vp-xs {
-      padding: 1rem;
-    }
+    transition: all .3s ease;
 
-
-    > span {
-      font-size: 1.5rem;
-      font-weight: bold;
-      text-align: center;
-      @include vp-lg {
-        font-size: calc(1.5rem * .9);
-      }
-      @include vp-md {
-        font-size: calc(1.5rem * .9);
-      }
-      @include vp-sm {
-        font-size: calc(1.5rem * .8);
-      }
-      @include vp-xs {
-        font-size: calc(1.5rem * .75);
-      }
+    &.on {
+      left: 0;
     }
-
-    > .close {
-      padding: .75rem 3rem;
-      border: none;
-      border-radius: 4rem;
-      outline: none;
-      background: #FC3435;
-      font-size: 1.25rem;
-      font-weight: 500;
-      color: #FFFFFF;
-      @include vp-lg {
-        padding: calc(.75rem * .9) calc(3rem * .9);
-        font-size: calc(1.25rem * .9);
-      }
-      @include vp-md {
-        padding: calc(.75rem * .9) calc(3rem * .9);
-        font-size: calc(1.25rem * .9);
-      }
-      @include vp-sm {
-        padding: calc(.75rem * .8) calc(3rem * .8);
-        font-size: calc(1.25rem * .8);
-      }
-      @include vp-xs {
-        padding: calc(.75rem * .75) calc(3rem * .75);
-        font-size: calc(1.25rem * .75);
-      }
-    }
-  }
-
-  &.active {
-    z-index: 9999;
   }
 }
+//.alert {
+//  width: 100%;
+//  height: 100%;
+//  padding: 0 2rem;
+//  position: fixed;
+//  top: 0;
+//  left: 0;
+//  display: flex;
+//  justify-content: center;
+//  align-items: center;
+//  z-index: -9999;
+//  background: rgba(0, 0, 0, .6);
+//  backdrop-filter: blur(.25rem);
+//  @include vp-lg {
+//    padding: 0 1.5rem;
+//  }
+//  @include vp-md {
+//    padding: 0 1.5rem;
+//  }
+//  @include vp-sm {
+//    padding: 0 1rem;
+//  }
+//  @include vp-xs {
+//    padding: 0 1rem;
+//  }
+//
+//  > .alert-inner {
+//    width: 100%;
+//    max-width: 30rem;
+//    padding: 1.5rem;
+//    aspect-ratio: 4 / 3;
+//    display: flex;
+//    flex-direction: column;
+//    justify-content: space-evenly;
+//    align-items: center;
+//    border: .125rem solid #FC3435;
+//    border-radius: 1rem;
+//    background: #FFFFFF;
+//    @include vp-lg {
+//      padding: calc(1.5rem * .9);
+//    }
+//    @include vp-md {
+//      padding: calc(1.5rem * .9);
+//    }
+//    @include vp-sm {
+//      padding: 1rem;
+//    }
+//    @include vp-xs {
+//      padding: 1rem;
+//    }
+//
+//
+//    > span {
+//      font-size: 1.5rem;
+//      font-weight: bold;
+//      text-align: center;
+//      @include vp-lg {
+//        font-size: calc(1.5rem * .9);
+//      }
+//      @include vp-md {
+//        font-size: calc(1.5rem * .9);
+//      }
+//      @include vp-sm {
+//        font-size: calc(1.5rem * .8);
+//      }
+//      @include vp-xs {
+//        font-size: calc(1.5rem * .75);
+//      }
+//    }
+//
+//    > .close {
+//      padding: .75rem 3rem;
+//      border: none;
+//      border-radius: 4rem;
+//      outline: none;
+//      background: #FC3435;
+//      font-size: 1.25rem;
+//      font-weight: 500;
+//      color: #FFFFFF;
+//      @include vp-lg {
+//        padding: calc(.75rem * .9) calc(3rem * .9);
+//        font-size: calc(1.25rem * .9);
+//      }
+//      @include vp-md {
+//        padding: calc(.75rem * .9) calc(3rem * .9);
+//        font-size: calc(1.25rem * .9);
+//      }
+//      @include vp-sm {
+//        padding: calc(.75rem * .8) calc(3rem * .8);
+//        font-size: calc(1.25rem * .8);
+//      }
+//      @include vp-xs {
+//        padding: calc(.75rem * .75) calc(3rem * .75);
+//        font-size: calc(1.25rem * .75);
+//      }
+//    }
+//  }
+//
+//  &.active {
+//    z-index: 9999;
+//  }
+//}

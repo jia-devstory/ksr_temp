@@ -1,19 +1,37 @@
 window.addEventListener("load", () => {
-    const aside = document.querySelector("aside");
-    const asideOn = document.querySelector("header > .header-content > .toggle-wrapper > .toggle");
+    const openBtn = document.querySelector("header .open-aside");
+    const blurBox = document.querySelector(".blur");
+    const asideMenu = document.querySelector("aside");
 
+    openBtn.addEventListener("click", () => {
+        if (asideMenu.classList.contains("on")) {
+            return
+        } else {
+            asideMenu.classList.add("on");
+            blurBox.classList.add("on");
+            blurBox.animate({opacity: [0, 1]}, {
+                duration: 300,
+                easing: "ease",
+                fill: "forwards"
+            });
+        }
+    });
 
-    asideOn.addEventListener("click", () => {
-        aside.animate({left: ["-100%", 0]}, {
-            duration: 300,
-            easing: "ease",
-            fill: "forwards"
-        });
-        aside.animate([{background: "rgba(0, 0, 0, 0)", backdropFilter: "blur(0)"}, {background: "rgba(0, 0, 0, .6)", backdropFilter: "blur(.25rem)"}], {
-            delay: 300,
-            duration: 300,
-            easing: "ease",
-            fill: "forwards"
-        })
-    })
+    const closeAction = () => {
+        if (asideMenu.classList.contains("on")) {
+            blurBox.animate({opacity: [1, 0]}, {
+                duration: 300,
+                easing: "ease",
+                fill: "forwards"
+            });
+            setTimeout(()=> {
+                blurBox.classList.remove("on");
+            }, 300);
+            asideMenu.classList.remove("on");
+        }
+    };
+
+    blurBox.addEventListener("click", () => {
+        closeAction();
+    });
 })

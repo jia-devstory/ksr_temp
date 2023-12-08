@@ -1,4 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@font-face {
+  font-family: "GmarketSans";
+  font-style: normal;
+  font-weight: normal;
+  src: local("GmarketSans"), url("../fonts/GmarketSansTTFBold.ttf") format("truetype"), url("../fonts/GmarketSansBold.otf") format("opentype");
+}
 * {
   margin: 0;
   padding: 0;
@@ -26,197 +32,289 @@ ul, ol, li {
 
 #app {
   width: 100%;
+  height: 100%;
+  position: sticky;
 }
-
-header {
+#app > header {
   width: 100%;
-  padding: 1.25rem 2rem;
+  padding: 0 2rem;
   position: fixed;
   top: 0;
   left: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  align-items: center;
-  z-index: 9998;
+  z-index: 9996;
   background: #FFFFFF;
   box-shadow: 0 0 2rem 0.5rem #FFFFFF;
 }
 @media all and (992px <= width < 1200px) {
-  header {
-    padding: 1.125rem 1.5rem;
+  #app > header {
+    padding: 0 1.5rem;
   }
 }
 @media all and (768px <= width < 992px) {
-  header {
-    padding: 1.125rem 1.5rem;
+  #app > header {
+    padding: 0 1.5rem;
   }
 }
 @media all and (576px <= width < 768px) {
-  header {
-    padding: 1rem 1rem;
+  #app > header {
+    padding: 0 1rem;
   }
 }
 @media all and (width < 576px) {
-  header {
-    padding: 0.9375rem 1rem;
+  #app > header {
+    padding: 0 1rem;
   }
 }
-header > .toolbar {
+#app > header > .header-inner {
   width: 100%;
   max-width: 90rem;
+  margin: 0 auto;
+  padding: 1.25rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+}
+@media all and (992px <= width < 1200px) {
+  #app > header > .header-inner {
+    padding: 1.125rem 0;
+  }
+}
+@media all and (768px <= width < 992px) {
+  #app > header > .header-inner {
+    padding: 1.125rem 0;
+  }
+}
+@media all and (576px <= width < 768px) {
+  #app > header > .header-inner {
+    padding: 1rem 0;
+  }
+}
+@media all and (width < 576px) {
+  #app > header > .header-inner {
+    padding: 0.9375rem 0;
+  }
+}
+#app > header > .header-inner > .toolbar {
+  width: 100%;
   height: 6.25rem;
   display: flex;
   flex-direction: row;
   justify-content: end;
   align-items: start;
   overflow: hidden;
-  transition: all 0.5s ease;
+  transition: all 0.3s ease;
 }
 @media all and (992px <= width < 1200px) {
-  header > .toolbar {
+  #app > header > .header-inner > .toolbar {
     height: 5.625rem;
   }
 }
 @media all and (768px <= width < 992px) {
-  header > .toolbar {
+  #app > header > .header-inner > .toolbar {
     height: 5.625rem;
   }
 }
 @media all and (576px <= width < 768px) {
-  header > .toolbar {
+  #app > header > .header-inner > .toolbar {
     height: 5rem;
   }
 }
 @media all and (width < 576px) {
-  header > .toolbar {
+  #app > header > .header-inner > .toolbar {
     height: 4.6875rem;
   }
 }
-header > .toolbar > a {
+#app > header > .header-inner > .toolbar > a {
   height: 2.5rem;
   padding: 0 2.25rem;
   display: flex;
   justify-content: center;
   align-items: center;
+  border: 0.0625rem solid transparent;
   border-radius: 2.5rem;
   background: #F2F2F2;
   font-size: 0.875rem;
   font-weight: 500;
+  letter-spacing: -0.035rem;
+  text-indent: -0.035rem;
   color: #8F8F8F;
+  transition: all 0.3s ease;
 }
 @media all and (992px <= width < 1200px) {
-  header > .toolbar > a {
+  #app > header > .header-inner > .toolbar > a {
     height: 2.25rem;
     padding: 0 2.025rem;
+    font-size: 0.7875rem;
+    letter-spacing: -0.0315rem;
+    text-indent: -0.0315rem;
   }
 }
 @media all and (768px <= width < 992px) {
-  header > .toolbar > a {
+  #app > header > .header-inner > .toolbar > a {
     height: 2.25rem;
     padding: 0 2.025rem;
+    font-size: 0.7875rem;
+    letter-spacing: -0.0315rem;
+    text-indent: -0.0315rem;
   }
 }
 @media all and (576px <= width < 768px) {
-  header > .toolbar > a {
+  #app > header > .header-inner > .toolbar > a {
     height: 2rem;
     padding: 0 1.8rem;
+    font-size: 0.7rem;
+    letter-spacing: -0.028rem;
+    text-indent: -0.028rem;
   }
 }
 @media all and (width < 576px) {
-  header > .toolbar > a {
+  #app > header > .header-inner > .toolbar > a {
     height: 1.875rem;
     padding: 0 1.6875rem;
+    font-size: 0.65625rem;
+    letter-spacing: -0.02625rem;
+    text-indent: -0.02625rem;
   }
 }
-header > .toolbar.disabled {
+#app > header > .header-inner > .toolbar > a:hover {
+  border-color: #FC3435;
+  background: #FFFFFF;
+  color: #FC3435;
+}
+#app > header > .header-inner > .toolbar.disabled {
   height: 0;
 }
-header > .header-content {
+#app > header > .header-inner > .title {
   width: 100%;
-  max-width: 90rem;
+  margin-bottom: 1.25rem;
+  position: relative;
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   gap: 1.25rem;
 }
 @media all and (992px <= width < 1200px) {
-  header > .header-content {
+  #app > header > .header-inner > .title {
+    margin-bottom: 1.125rem;
     gap: 1.125rem;
   }
 }
 @media all and (768px <= width < 992px) {
-  header > .header-content {
+  #app > header > .header-inner > .title {
+    margin-bottom: 1.125rem;
     gap: 1.125rem;
   }
 }
 @media all and (576px <= width < 768px) {
-  header > .header-content {
+  #app > header > .header-inner > .title {
+    margin-bottom: 1rem;
+    justify-content: space-between;
     gap: 1rem;
   }
 }
 @media all and (width < 576px) {
-  header > .header-content {
+  #app > header > .header-inner > .title {
+    margin-bottom: 0.9375rem;
+    justify-content: space-between;
     gap: 0.9375rem;
   }
 }
-header > .header-content > .logo {
+#app > header > .header-inner > .title > .btn-wrapper {
+  margin-right: auto;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+@media all and (576px <= width < 768px) {
+  #app > header > .header-inner > .title > .btn-wrapper {
+    height: 2rem;
+    display: flex;
+  }
+}
+@media all and (width < 576px) {
+  #app > header > .header-inner > .title > .btn-wrapper {
+    height: 1.25rem;
+    display: flex;
+  }
+}
+#app > header > .header-inner > .title > .btn-wrapper > .open-aside {
+  width: 1.25rem;
+  aspect-ratio: 1/1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#app > header > .header-inner > .title > .btn-wrapper > .open-aside > img {
+  width: 100%;
+}
+#app > header > .header-inner > .title > .logo {
   height: 2.875rem;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 @media all and (992px <= width < 1200px) {
-  header > .header-content > .logo {
+  #app > header > .header-inner > .title > .logo {
     height: 2.5875rem;
   }
 }
 @media all and (768px <= width < 992px) {
-  header > .header-content > .logo {
+  #app > header > .header-inner > .title > .logo {
     height: 2.5875rem;
   }
 }
 @media all and (576px <= width < 768px) {
-  header > .header-content > .logo {
+  #app > header > .header-inner > .title > .logo {
     height: 2rem;
   }
 }
 @media all and (width < 576px) {
-  header > .header-content > .logo {
-    height: 1.5rem;
+  #app > header > .header-inner > .title > .logo {
+    height: 1.25rem;
   }
 }
-header > .header-content > .logo > img {
+#app > header > .header-inner > .title > .logo > img {
   height: 100%;
 }
-header > .header-content > h1 {
+#app > header > .header-inner > .title > h1 {
   font-size: 2.5rem;
   font-weight: 500;
+  letter-spacing: -0.1rem;
+  text-indent: -0.1rem;
   color: #4E4E4E;
 }
 @media all and (992px <= width < 1200px) {
-  header > .header-content > h1 {
+  #app > header > .header-inner > .title > h1 {
     font-size: 2.25rem;
+    letter-spacing: -0.09rem;
+    text-indent: -0.09rem;
   }
 }
 @media all and (768px <= width < 992px) {
-  header > .header-content > h1 {
+  #app > header > .header-inner > .title > h1 {
     font-size: 2.25rem;
+    letter-spacing: -0.09rem;
+    text-indent: -0.09rem;
   }
 }
 @media all and (576px <= width < 768px) {
-  header > .header-content > h1 {
+  #app > header > .header-inner > .title > h1 {
     font-size: 1.75rem;
+    letter-spacing: -0.07rem;
+    text-indent: -0.07rem;
   }
 }
 @media all and (width < 576px) {
-  header > .header-content > h1 {
-    font-size: 1.25rem;
+  #app > header > .header-inner > .title > h1 {
+    font-size: 1.125rem;
+    letter-spacing: -0.045rem;
+    text-indent: -0.045rem;
   }
 }
-header > .header-content > nav {
+#app > header > .header-inner > nav {
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -225,169 +323,227 @@ header > .header-content > nav {
   gap: 0.5rem;
 }
 @media all and (992px <= width < 1200px) {
-  header > .header-content > nav {
+  #app > header > .header-inner > nav {
     gap: 0.45rem;
   }
 }
 @media all and (768px <= width < 992px) {
-  header > .header-content > nav {
+  #app > header > .header-inner > nav {
     gap: 0.45rem;
   }
 }
 @media all and (576px <= width < 768px) {
-  header > .header-content > nav {
+  #app > header > .header-inner > nav {
     display: none;
   }
 }
 @media all and (width < 576px) {
-  header > .header-content > nav {
+  #app > header > .header-inner > nav {
     display: none;
   }
 }
-header > .header-content > nav > a {
-  padding: 0.875rem 3.125rem;
-  border-radius: 4rem;
+#app > header > .header-inner > nav > a {
+  padding: 0.75rem 3.125rem;
+  border: 0.0625rem solid transparent;
+  border-radius: 2rem;
   background: #F2F2F2;
   font-size: 1.125rem;
+  letter-spacing: -0.045rem;
+  text-indent: -0.045rem;
   color: #464646;
+  transition: all 0.3s ease;
 }
 @media all and (992px <= width < 1200px) {
-  header > .header-content > nav > a {
-    padding: 0.7875rem 2.8125rem;
+  #app > header > .header-inner > nav > a {
+    padding: 0.675rem 2.8125rem;
     font-size: 1.0125rem;
+    letter-spacing: -0.0405rem;
+    text-indent: -0.0405rem;
   }
 }
 @media all and (768px <= width < 992px) {
-  header > .header-content > nav > a {
-    padding: 0.7875rem 2rem;
+  #app > header > .header-inner > nav > a {
+    padding: 0.675rem 2rem;
     font-size: 1.0125rem;
+    letter-spacing: -0.0405rem;
+    text-indent: -0.0405rem;
   }
 }
-header > .header-content > nav > a.active {
+#app > header > .header-inner > nav > a.active {
   background: #FC3435;
   font-weight: 500;
   color: #FFFFFF;
 }
-
-main {
+#app > header > .header-inner > nav > a:not(.active):hover {
+  border-color: #FC3435;
+  background: #FFFFFF;
+  color: #FC3435;
+}
+#app > main {
   width: 100%;
-  padding-top: 18.75rem;
-  z-index: 9997;
+  padding-top: 15rem;
+  z-index: 9995;
   background: #FFFFFF;
 }
 @media all and (992px <= width < 1200px) {
-  main {
-    padding-top: 16.875rem;
+  #app > main {
+    padding-top: 13.5rem;
   }
 }
 @media all and (768px <= width < 992px) {
-  main {
-    padding-top: 16.875rem;
+  #app > main {
+    padding-top: 13.5rem;
   }
 }
 @media all and (576px <= width < 768px) {
-  main {
-    padding-top: 10rem;
+  #app > main {
+    padding-top: 12rem;
   }
 }
 @media all and (width < 576px) {
-  main {
-    padding-top: 10rem;
+  #app > main {
+    padding-top: 11.25rem;
   }
 }
-main > section {
+#app > main > section {
   width: 100%;
   padding: 0 2rem;
 }
 @media all and (992px <= width < 1200px) {
-  main > section {
+  #app > main > section {
     padding: 0 1.5rem;
   }
 }
 @media all and (768px <= width < 992px) {
-  main > section {
+  #app > main > section {
     padding: 0 1.5rem;
   }
 }
 @media all and (576px <= width < 768px) {
-  main > section {
+  #app > main > section {
     padding: 0 1rem;
   }
 }
 @media all and (width < 576px) {
-  main > section {
+  #app > main > section {
     padding: 0 1rem;
   }
 }
-main > section > .section-inner {
+#app > main > section > .section-inner {
   width: 100%;
   max-width: 90rem;
   margin: 0 auto;
-  padding: 2rem 0;
+  padding: 3.125rem 0;
   display: flex;
   flex-direction: column;
   justify-content: start;
-  align-items: start;
-  gap: 1.875rem;
+  align-items: center;
 }
 @media all and (992px <= width < 1200px) {
-  main > section > .section-inner {
-    padding: 1.5rem 0;
-    gap: 1.6875rem;
+  #app > main > section > .section-inner {
+    padding: 2.8125rem 0;
   }
 }
 @media all and (768px <= width < 992px) {
-  main > section > .section-inner {
-    padding: 1.5rem 0;
-    gap: 1.6875rem;
+  #app > main > section > .section-inner {
+    padding: 2.8125rem 0;
   }
 }
 @media all and (576px <= width < 768px) {
-  main > section > .section-inner {
-    padding: 1rem 0;
-    gap: 1.5rem;
+  #app > main > section > .section-inner {
+    padding: 2.5rem 0;
   }
 }
 @media all and (width < 576px) {
-  main > section > .section-inner {
-    padding: 1rem 0;
-    gap: 1.40625rem;
+  #app > main > section > .section-inner {
+    padding: 2.34375rem 0;
   }
 }
-main > section > .section-inner > .section-title {
+#app > main > section .section-title {
   width: 100%;
-  padding: 1.5rem;
+  padding: 1rem 1.5rem;
   border-bottom: 0.125rem solid #373737;
   font-size: 1.875rem;
+  letter-spacing: -0.075rem;
+  text-indent: -0.075rem;
   color: #2E2E2E;
 }
 @media all and (992px <= width < 1200px) {
-  main > section > .section-inner > .section-title {
-    padding: 1.35rem;
+  #app > main > section .section-title {
+    padding: 0.9rem 1.35rem;
     font-size: 1.6875rem;
+    letter-spacing: -0.0675rem;
+    text-indent: -0.0675rem;
   }
 }
 @media all and (768px <= width < 992px) {
-  main > section > .section-inner > .section-title {
-    padding: 1.35rem;
+  #app > main > section .section-title {
+    padding: 0.9rem 1.35rem;
     font-size: 1.6875rem;
+    letter-spacing: -0.0675rem;
+    text-indent: -0.0675rem;
   }
 }
 @media all and (576px <= width < 768px) {
-  main > section > .section-inner > .section-title {
-    padding: 1rem;
+  #app > main > section .section-title {
+    padding: 0.8rem 1rem;
     font-size: 1.5rem;
+    letter-spacing: -0.06rem;
+    text-indent: -0.06rem;
   }
 }
 @media all and (width < 576px) {
-  main > section > .section-inner > .section-title {
-    padding: 1rem;
+  #app > main > section .section-title {
+    padding: 0.75rem 0.5rem;
     font-size: 1.40625rem;
+    letter-spacing: -0.05625rem;
+    text-indent: -0.05625rem;
   }
 }
-main > section > .section-inner > .notice {
+#app > main > section .section-title > mark {
+  padding: 0.125rem 1rem;
+  border-radius: 2rem;
+  background: #2E2E2E;
+  font-size: 1.125rem;
+  font-weight: bold;
+  letter-spacing: -0.045rem;
+  text-indent: -0.045rem;
+  color: #EBEB2B;
+}
+@media all and (992px <= width < 1200px) {
+  #app > main > section .section-title > mark {
+    padding: 0.1125rem 0.9rem;
+    font-size: 1.0125rem;
+    letter-spacing: -0.0405rem;
+    text-indent: -0.0405rem;
+  }
+}
+@media all and (768px <= width < 992px) {
+  #app > main > section .section-title > mark {
+    padding: 0.1125rem 0.9rem;
+    font-size: 1.0125rem;
+    letter-spacing: -0.0405rem;
+    text-indent: -0.0405rem;
+  }
+}
+@media all and (576px <= width < 768px) {
+  #app > main > section .section-title > mark {
+    padding: 0.1rem 0.8rem;
+    font-size: 0.9rem;
+    letter-spacing: -0.036rem;
+    text-indent: -0.036rem;
+  }
+}
+@media all and (width < 576px) {
+  #app > main > section .section-title > mark {
+    padding: 0.09375rem 0.75rem;
+    font-size: 0.84375rem;
+    letter-spacing: -0.03375rem;
+    text-indent: -0.03375rem;
+  }
+}
+#app > main > section .notice {
   width: 100%;
-  margin-top: -1.875rem;
   padding: 1.75rem;
   display: flex;
   flex-direction: row;
@@ -397,166 +553,200 @@ main > section > .section-inner > .notice {
   background: #FFF3F3;
 }
 @media all and (992px <= width < 1200px) {
-  main > section > .section-inner > .notice {
-    margin-top: -1.6875rem;
+  #app > main > section .notice {
+    padding: 1.575rem;
     flex-direction: column;
-    gap: 0.9rem;
+    gap: 0.5rem;
   }
 }
 @media all and (768px <= width < 992px) {
-  main > section > .section-inner > .notice {
-    margin-top: -1.6875rem;
+  #app > main > section .notice {
+    padding: 1.575rem;
     flex-direction: column;
-    gap: 0.9rem;
+    gap: 0.5rem;
   }
 }
 @media all and (576px <= width < 768px) {
-  main > section > .section-inner > .notice {
-    margin-top: -1.5rem;
+  #app > main > section .notice {
+    padding: 1.4rem;
     flex-direction: column;
-    gap: 0.8rem;
+    gap: 0.5rem;
   }
 }
 @media all and (width < 576px) {
-  main > section > .section-inner > .notice {
-    margin-top: -1.40625rem;
+  #app > main > section .notice {
+    padding: 1.3125rem 1rem;
     flex-direction: column;
-    gap: 0.75rem;
+    gap: 0.25rem;
   }
 }
-main > section > .section-inner > .notice > h3 {
+#app > main > section .notice > h3 {
   padding: 0.5rem 3.125rem;
   display: flex;
   justify-content: center;
   align-items: center;
   border: 0.0625rem solid #FC3435;
   border-radius: 4rem;
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: 500;
+  letter-spacing: -0.045rem;
+  text-indent: -0.045rem;
   color: #FC3435;
 }
 @media all and (992px <= width < 1200px) {
-  main > section > .section-inner > .notice > h3 {
+  #app > main > section .notice > h3 {
     padding: 0.45rem 2.8125rem;
-    font-size: 1.125rem;
+    font-size: 1.0125rem;
+    letter-spacing: -0.0405rem;
+    text-indent: -0.0405rem;
   }
 }
 @media all and (768px <= width < 992px) {
-  main > section > .section-inner > .notice > h3 {
+  #app > main > section .notice > h3 {
     padding: 0.45rem 2.8125rem;
-    font-size: 1.125rem;
+    font-size: 1.0125rem;
+    letter-spacing: -0.0405rem;
+    text-indent: -0.0405rem;
   }
 }
 @media all and (576px <= width < 768px) {
-  main > section > .section-inner > .notice > h3 {
+  #app > main > section .notice > h3 {
     padding: 0.4rem 2.5rem;
-    font-size: 1rem;
+    font-size: 0.9rem;
+    letter-spacing: -0.036rem;
+    text-indent: -0.036rem;
   }
 }
 @media all and (width < 576px) {
-  main > section > .section-inner > .notice > h3 {
+  #app > main > section .notice > h3 {
     padding: 0.375rem 2.34375rem;
-    font-size: 0.9375rem;
+    font-size: 0.84375rem;
+    letter-spacing: -0.03375rem;
+    text-indent: -0.03375rem;
   }
 }
-main > section > .section-inner > .notice > span {
-  font-size: 1.25rem;
+#app > main > section .notice > span {
+  font-size: 1.125rem;
   font-weight: bold;
+  letter-spacing: -0.045rem;
+  text-indent: -0.045rem;
   color: #3A3A3A;
 }
 @media all and (992px <= width < 1200px) {
-  main > section > .section-inner > .notice > span {
-    font-size: 1.125rem;
+  #app > main > section .notice > span {
+    font-size: 1.0125rem;
+    letter-spacing: -0.0405rem;
+    text-indent: -0.0405rem;
   }
 }
 @media all and (768px <= width < 992px) {
-  main > section > .section-inner > .notice > span {
-    font-size: 1.125rem;
+  #app > main > section .notice > span {
+    font-size: 1.0125rem;
+    letter-spacing: -0.0405rem;
+    text-indent: -0.0405rem;
   }
 }
 @media all and (576px <= width < 768px) {
-  main > section > .section-inner > .notice > span {
-    font-size: 1rem;
+  #app > main > section .notice > span {
+    font-size: 0.9rem;
+    letter-spacing: -0.036rem;
+    text-indent: -0.036rem;
   }
 }
 @media all and (width < 576px) {
-  main > section > .section-inner > .notice > span {
-    font-size: 0.9375rem;
+  #app > main > section .notice > span {
+    font-size: 0.84375rem;
+    letter-spacing: -0.03375rem;
+    text-indent: -0.03375rem;
   }
 }
-main > section > .section-inner > .summary {
+#app > main > section .summary {
   width: 100%;
-  padding: 0 1.5rem;
-  font-size: 1.25rem;
+  padding: 1.875rem 1.5rem;
+  font-size: 1.125rem;
   font-weight: 500;
+  letter-spacing: -0.045rem;
+  text-indent: -0.045rem;
   color: #7E7E7E;
 }
 @media all and (992px <= width < 1200px) {
-  main > section > .section-inner > .summary {
-    padding: 0 1.35rem;
-    font-size: 1.125rem;
+  #app > main > section .summary {
+    padding: 1.6875rem 1.35rem;
+    font-size: 1.0125rem;
+    letter-spacing: -0.0405rem;
+    text-indent: -0.0405rem;
   }
 }
 @media all and (768px <= width < 992px) {
-  main > section > .section-inner > .summary {
-    padding: 0 1.35rem;
-    font-size: 1.125rem;
+  #app > main > section .summary {
+    padding: 1.6875rem 1.35rem;
+    font-size: 1.0125rem;
+    letter-spacing: -0.0405rem;
+    text-indent: -0.0405rem;
   }
 }
 @media all and (576px <= width < 768px) {
-  main > section > .section-inner > .summary {
-    padding: 0 1rem;
-    font-size: 1rem;
+  #app > main > section .summary {
+    padding: 1.5rem 1rem;
+    font-size: 0.9rem;
+    letter-spacing: -0.036rem;
+    text-indent: -0.036rem;
   }
 }
 @media all and (width < 576px) {
-  main > section > .section-inner > .summary {
-    padding: 0 1rem;
-    font-size: 0.9375rem;
+  #app > main > section .summary {
+    padding: 1.40625rem 0.5rem;
+    font-size: 0.84375rem;
+    letter-spacing: -0.03375rem;
+    text-indent: -0.03375rem;
   }
 }
-main > section > .section-inner > .summary > mark {
+#app > main > section .summary > mark {
   background: none;
   color: #FC3435;
 }
-main > section.changes .table-wrapper {
+#app > main > section.changes .table-wrapper {
   width: 100%;
   padding: 0 1.5rem;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: start;
   align-items: stretch;
   gap: 2.5rem;
 }
 @media all and (992px <= width < 1200px) {
-  main > section.changes .table-wrapper {
+  #app > main > section.changes .table-wrapper {
     padding: 0 1.35rem;
     flex-direction: column;
     align-items: center;
+    gap: 1.6875rem;
   }
 }
 @media all and (768px <= width < 992px) {
-  main > section.changes .table-wrapper {
+  #app > main > section.changes .table-wrapper {
     padding: 0 1.35rem;
     flex-direction: column;
     align-items: center;
+    gap: 1.6875rem;
   }
 }
 @media all and (576px <= width < 768px) {
-  main > section.changes .table-wrapper {
+  #app > main > section.changes .table-wrapper {
     padding: 0 1rem;
     flex-direction: column;
     align-items: center;
+    gap: 1.5rem;
   }
 }
 @media all and (width < 576px) {
-  main > section.changes .table-wrapper {
-    padding: 0;
+  #app > main > section.changes .table-wrapper {
+    padding: 0 0.5rem;
     flex-direction: column;
     align-items: center;
+    gap: 1.40625rem;
   }
 }
-main > section.changes .table-wrapper > .table {
+#app > main > section.changes .table-wrapper > .table {
   width: 50%;
   display: flex;
   flex-direction: column;
@@ -565,56 +755,65 @@ main > section.changes .table-wrapper > .table {
   gap: 0.75rem;
 }
 @media all and (992px <= width < 1200px) {
-  main > section.changes .table-wrapper > .table {
+  #app > main > section.changes .table-wrapper > .table {
     width: 100%;
     gap: 0.675rem;
   }
 }
 @media all and (768px <= width < 992px) {
-  main > section.changes .table-wrapper > .table {
+  #app > main > section.changes .table-wrapper > .table {
     width: 100%;
     gap: 0.675rem;
   }
 }
 @media all and (576px <= width < 768px) {
-  main > section.changes .table-wrapper > .table {
+  #app > main > section.changes .table-wrapper > .table {
     width: 100%;
     gap: 0.6rem;
   }
 }
 @media all and (width < 576px) {
-  main > section.changes .table-wrapper > .table {
+  #app > main > section.changes .table-wrapper > .table {
     width: 100%;
-    gap: 0.5rem;
+    gap: 0.5625rem;
   }
 }
-main > section.changes .table-wrapper > .table > .table-title {
+#app > main > section.changes .table-wrapper > .table > .table-title {
   width: 100%;
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: bold;
-  color: #2E2E2E;
+  letter-spacing: -0.045rem;
+  text-indent: -0.045rem;
 }
 @media all and (992px <= width < 1200px) {
-  main > section.changes .table-wrapper > .table > .table-title {
-    font-size: 1.125rem;
+  #app > main > section.changes .table-wrapper > .table > .table-title {
+    font-size: 1.0125rem;
+    letter-spacing: -0.0405rem;
+    text-indent: -0.0405rem;
   }
 }
 @media all and (768px <= width < 992px) {
-  main > section.changes .table-wrapper > .table > .table-title {
-    font-size: 1.125rem;
+  #app > main > section.changes .table-wrapper > .table > .table-title {
+    font-size: 1.0125rem;
+    letter-spacing: -0.0405rem;
+    text-indent: -0.0405rem;
   }
 }
 @media all and (576px <= width < 768px) {
-  main > section.changes .table-wrapper > .table > .table-title {
-    font-size: 1rem;
+  #app > main > section.changes .table-wrapper > .table > .table-title {
+    font-size: 0.9rem;
+    letter-spacing: -0.036rem;
+    text-indent: -0.036rem;
   }
 }
 @media all and (width < 576px) {
-  main > section.changes .table-wrapper > .table > .table-title {
-    font-size: 0.9375rem;
+  #app > main > section.changes .table-wrapper > .table > .table-title {
+    font-size: 0.84375rem;
+    letter-spacing: -0.03375rem;
+    text-indent: -0.03375rem;
   }
 }
-main > section.changes .table-wrapper > .table > .table-body {
+#app > main > section.changes .table-wrapper > .table > .table-body {
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -623,26 +822,26 @@ main > section.changes .table-wrapper > .table > .table-body {
   gap: 0.75rem;
 }
 @media all and (992px <= width < 1200px) {
-  main > section.changes .table-wrapper > .table > .table-body {
+  #app > main > section.changes .table-wrapper > .table > .table-body {
     gap: 0.675rem;
   }
 }
 @media all and (768px <= width < 992px) {
-  main > section.changes .table-wrapper > .table > .table-body {
+  #app > main > section.changes .table-wrapper > .table > .table-body {
     gap: 0.675rem;
   }
 }
 @media all and (576px <= width < 768px) {
-  main > section.changes .table-wrapper > .table > .table-body {
+  #app > main > section.changes .table-wrapper > .table > .table-body {
     gap: 0.6rem;
   }
 }
 @media all and (width < 576px) {
-  main > section.changes .table-wrapper > .table > .table-body {
-    gap: 0.125rem;
+  #app > main > section.changes .table-wrapper > .table > .table-body {
+    gap: 0.25rem;
   }
 }
-main > section.changes .table-wrapper > .table > .table-body > ul {
+#app > main > section.changes .table-wrapper > .table > .table-body > ul {
   width: 33.3333333333%;
   display: flex;
   flex-direction: column;
@@ -651,26 +850,26 @@ main > section.changes .table-wrapper > .table > .table-body > ul {
   gap: 0.75rem;
 }
 @media all and (992px <= width < 1200px) {
-  main > section.changes .table-wrapper > .table > .table-body > ul {
+  #app > main > section.changes .table-wrapper > .table > .table-body > ul {
     gap: 0.675rem;
   }
 }
 @media all and (768px <= width < 992px) {
-  main > section.changes .table-wrapper > .table > .table-body > ul {
+  #app > main > section.changes .table-wrapper > .table > .table-body > ul {
     gap: 0.675rem;
   }
 }
 @media all and (576px <= width < 768px) {
-  main > section.changes .table-wrapper > .table > .table-body > ul {
+  #app > main > section.changes .table-wrapper > .table > .table-body > ul {
     gap: 0.6rem;
   }
 }
 @media all and (width < 576px) {
-  main > section.changes .table-wrapper > .table > .table-body > ul {
-    gap: 0.125rem;
+  #app > main > section.changes .table-wrapper > .table > .table-body > ul {
+    gap: 0.25rem;
   }
 }
-main > section.changes .table-wrapper > .table > .table-body > ul > li {
+#app > main > section.changes .table-wrapper > .table > .table-body > ul > li {
   width: 100%;
   padding: 0.75rem 0;
   display: flex;
@@ -678,53 +877,67 @@ main > section.changes .table-wrapper > .table > .table-body > ul > li {
   align-items: center;
   border: 0.0625rem solid;
   border-radius: 4rem;
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: 500;
+  letter-spacing: -0.045rem;
+  text-indent: -0.045rem;
 }
 @media all and (992px <= width < 1200px) {
-  main > section.changes .table-wrapper > .table > .table-body > ul > li {
+  #app > main > section.changes .table-wrapper > .table > .table-body > ul > li {
     padding: 0.675rem 0;
-    font-size: 1.125rem;
+    font-size: 1.0125rem;
+    letter-spacing: -0.0405rem;
+    text-indent: -0.0405rem;
   }
 }
 @media all and (768px <= width < 992px) {
-  main > section.changes .table-wrapper > .table > .table-body > ul > li {
+  #app > main > section.changes .table-wrapper > .table > .table-body > ul > li {
     padding: 0.675rem 0;
-    font-size: 1.125rem;
+    font-size: 1.0125rem;
+    letter-spacing: -0.0405rem;
+    text-indent: -0.0405rem;
   }
 }
 @media all and (576px <= width < 768px) {
-  main > section.changes .table-wrapper > .table > .table-body > ul > li {
+  #app > main > section.changes .table-wrapper > .table > .table-body > ul > li {
     padding: 0.6rem 0;
-    font-size: 1rem;
+    font-size: 0.9rem;
+    letter-spacing: -0.036rem;
+    text-indent: -0.036rem;
   }
 }
 @media all and (width < 576px) {
-  main > section.changes .table-wrapper > .table > .table-body > ul > li {
+  #app > main > section.changes .table-wrapper > .table > .table-body > ul > li {
     padding: 0.5625rem 0;
-    font-size: 0.875rem;
-    border-radius: 0.5rem;
+    font-size: 0.84375rem;
+    letter-spacing: -0.03375rem;
+    text-indent: -0.03375rem;
   }
 }
-main > section.changes .table-wrapper > .table > .table-body > ul > li.name {
+#app > main > section.changes .table-wrapper > .table > .table-body > ul > li.name {
   color: #FFFFFF;
 }
-main > section.changes .table-wrapper > .table.season23 li {
+#app > main > section.changes .table-wrapper > .table > .table-body > ul > li.special {
+  border-color: #2E2E2E;
+  color: #2E2E2E;
+}
+#app > main > section.changes .table-wrapper > .table:first-of-type li {
   border-color: #C8C8C8;
   color: #C8C8C8;
 }
-main > section.changes .table-wrapper > .table.season23 li.name {
+#app > main > section.changes .table-wrapper > .table:first-of-type li.name {
   background: #C8C8C8;
 }
-main > section.changes .table-wrapper > .table.season24 li {
+#app > main > section.changes .table-wrapper > .table:last-of-type li {
   border-color: #FC3435;
   color: #FC3435;
 }
-main > section.changes .table-wrapper > .table.season24 li.name {
+#app > main > section.changes .table-wrapper > .table:last-of-type li.name {
   background: #FC3435;
 }
-main > section.opinion form {
+#app > main > section.opinion form {
   width: 100%;
+  padding: 0 1.5rem;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -732,93 +945,149 @@ main > section.opinion form {
   align-items: center;
   gap: 0.75rem;
 }
-main > section.opinion form > input {
+@media all and (992px <= width < 1200px) {
+  #app > main > section.opinion form {
+    padding: 0 1.35rem;
+    gap: 0.675rem;
+  }
+}
+@media all and (768px <= width < 992px) {
+  #app > main > section.opinion form {
+    padding: 0 1.35rem;
+    gap: 0.675rem;
+  }
+}
+@media all and (576px <= width < 768px) {
+  #app > main > section.opinion form {
+    padding: 0 1rem;
+    gap: 0.6rem;
+  }
+}
+@media all and (width < 576px) {
+  #app > main > section.opinion form {
+    padding: 0 0.5rem;
+    gap: 0.5625rem;
+  }
+}
+#app > main > section.opinion form > input {
   width: calc((100% - 0.75rem) / 2);
   padding: 0.75rem 1.5rem;
   border: 0.0625rem solid #A4A4A4;
   border-radius: 0.5rem;
   outline: 0.0625rem solid transparent;
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: 500;
+  letter-spacing: -0.045rem;
+  text-indent: -0.045rem;
+  transition: all 0.3s ease;
 }
 @media all and (992px <= width < 1200px) {
-  main > section.opinion form > input {
+  #app > main > section.opinion form > input {
+    width: calc((100% - 0.675rem) / 2);
     padding: 0.675rem 1.35rem;
-    font-size: 1.125rem;
+    font-size: 1.0125rem;
+    letter-spacing: -0.0405rem;
+    text-indent: -0.0405rem;
   }
 }
 @media all and (768px <= width < 992px) {
-  main > section.opinion form > input {
+  #app > main > section.opinion form > input {
+    width: calc((100% - 0.675rem) / 2);
     padding: 0.675rem 1.35rem;
-    font-size: 1.125rem;
+    font-size: 1.0125rem;
+    letter-spacing: -0.0405rem;
+    text-indent: -0.0405rem;
   }
 }
 @media all and (576px <= width < 768px) {
-  main > section.opinion form > input {
+  #app > main > section.opinion form > input {
+    width: calc((100% - 0.6rem) / 2);
     padding: 0.6rem 1rem;
-    font-size: 1rem;
+    font-size: 0.9rem;
+    letter-spacing: -0.036rem;
+    text-indent: -0.036rem;
   }
 }
 @media all and (width < 576px) {
-  main > section.opinion form > input {
+  #app > main > section.opinion form > input {
+    width: 100%;
     padding: 0.5625rem 1rem;
-    font-size: 0.9375rem;
+    font-size: 0.84375rem;
+    letter-spacing: -0.03375rem;
+    text-indent: -0.03375rem;
   }
 }
-main > section.opinion form > input:focus {
+#app > main > section.opinion form > input::placeholder {
+  transition: all 0.3s ease;
+}
+#app > main > section.opinion form > input:focus {
   border-color: transparent;
   outline-color: #FC3435;
 }
-main > section.opinion form > input:focus::placeholder {
+#app > main > section.opinion form > input:focus::placeholder {
   opacity: 0;
 }
-main > section.opinion form > textarea {
+#app > main > section.opinion form > textarea {
   width: 100%;
   height: 16rem;
   padding: 0.75rem 1.5rem;
   border: 0.0625rem solid #A4A4A4;
   border-radius: 0.5rem;
   outline: 0.0625rem solid transparent;
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: 500;
+  letter-spacing: -0.045rem;
+  text-indent: -0.045rem;
+  transition: all 0.3s ease;
   resize: none;
 }
 @media all and (992px <= width < 1200px) {
-  main > section.opinion form > textarea {
+  #app > main > section.opinion form > textarea {
     height: 14.4rem;
     padding: 0.675rem 1.35rem;
-    font-size: 1.125rem;
+    font-size: 1.0125rem;
+    letter-spacing: -0.0405rem;
+    text-indent: -0.0405rem;
   }
 }
 @media all and (768px <= width < 992px) {
-  main > section.opinion form > textarea {
+  #app > main > section.opinion form > textarea {
     height: 14.4rem;
     padding: 0.675rem 1.35rem;
-    font-size: 1.125rem;
+    font-size: 1.0125rem;
+    letter-spacing: -0.0405rem;
+    text-indent: -0.0405rem;
   }
 }
 @media all and (576px <= width < 768px) {
-  main > section.opinion form > textarea {
+  #app > main > section.opinion form > textarea {
     height: 12.8rem;
     padding: 0.6rem 1rem;
-    font-size: 1rem;
+    font-size: 0.9rem;
+    letter-spacing: -0.036rem;
+    text-indent: -0.036rem;
   }
 }
 @media all and (width < 576px) {
-  main > section.opinion form > textarea {
+  #app > main > section.opinion form > textarea {
     height: 12rem;
-    padding: 0.5625rem 1rem;
-    font-size: 0.9375rem;
+    padding: 0.5625rem 0.5rem;
+    font-size: 0.84375rem;
+    letter-spacing: -0.03375rem;
+    text-indent: -0.03375rem;
   }
 }
-main > section.opinion form > textarea:focus {
+#app > main > section.opinion form > textarea::placeholder {
+  transition: all 0.3s ease;
+}
+#app > main > section.opinion form > textarea:focus {
   border-color: transparent;
   outline-color: #FC3435;
 }
-main > section.opinion form > textarea:focus::placeholder {
+#app > main > section.opinion form > textarea:focus::placeholder {
   opacity: 0;
 }
-main > section.opinion form > .explain {
+#app > main > section.opinion form > .explain {
   width: 100%;
   padding: 0.75rem 1.5rem;
   display: flex;
@@ -826,307 +1095,172 @@ main > section.opinion form > .explain {
   justify-content: start;
   align-items: start;
   background: #F3F3F3;
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-weight: 500;
+  letter-spacing: -0.04rem;
+  text-indent: -0.04rem;
   color: #7E7E7E;
 }
 @media all and (992px <= width < 1200px) {
-  main > section.opinion form > .explain {
+  #app > main > section.opinion form > .explain {
     padding: 0.675rem 1.35rem;
-    font-size: 1.125rem;
+    font-size: 0.9rem;
+    letter-spacing: -0.036rem;
+    text-indent: -0.036rem;
   }
 }
 @media all and (768px <= width < 992px) {
-  main > section.opinion form > .explain {
+  #app > main > section.opinion form > .explain {
     padding: 0.675rem 1.35rem;
-    font-size: 1.125rem;
+    font-size: 0.9rem;
+    letter-spacing: -0.036rem;
+    text-indent: -0.036rem;
   }
 }
 @media all and (576px <= width < 768px) {
-  main > section.opinion form > .explain {
+  #app > main > section.opinion form > .explain {
     padding: 0.6rem 1rem;
-    font-size: 1rem;
+    font-size: 0.8rem;
+    letter-spacing: -0.032rem;
+    text-indent: -0.032rem;
   }
 }
 @media all and (width < 576px) {
-  main > section.opinion form > .explain {
-    padding: 0.5625rem 1rem;
-    font-size: 0.9375rem;
+  #app > main > section.opinion form > .explain {
+    padding: 0.5625rem 0.5rem;
+    font-size: 0.75rem;
+    letter-spacing: -0.03rem;
+    text-indent: -0.03rem;
   }
 }
-main > section.opinion form > .explain > span:first-of-type {
+#app > main > section.opinion form > .explain > span:first-of-type {
   font-weight: bold;
   color: #373737;
 }
-main > section.opinion form > .explain > li {
+#app > main > section.opinion form > .explain > li {
   list-style: inside;
 }
-main > section.opinion form > .explain > li::marker {
+#app > main > section.opinion form > .explain > li::marker {
   content: " - ";
 }
-main > section.opinion form > button {
+#app > main > section.opinion form > button {
   padding: 1rem 3.125rem;
-  position: relative;
-  border: none;
-  outline: none;
+  border: 0.0625rem solid #FC3435;
   border-radius: 3rem;
+  outline: none;
   background: #FC3435;
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: 500;
+  letter-spacing: -0.045rem;
+  text-indent: -0.045rem;
   color: #FFFFFF;
+  transition: all 0.3s ease;
 }
 @media all and (992px <= width < 1200px) {
-  main > section.opinion form > button {
+  #app > main > section.opinion form > button {
     padding: 0.9rem 2.8125rem;
-    font-size: 1.125rem;
+    font-size: 1.0125rem;
+    letter-spacing: -0.0405rem;
+    text-indent: -0.0405rem;
   }
 }
 @media all and (768px <= width < 992px) {
-  main > section.opinion form > button {
+  #app > main > section.opinion form > button {
     padding: 0.9rem 2.8125rem;
-    font-size: 1.125rem;
+    font-size: 1.0125rem;
+    letter-spacing: -0.0405rem;
+    text-indent: -0.0405rem;
   }
 }
 @media all and (576px <= width < 768px) {
-  main > section.opinion form > button {
+  #app > main > section.opinion form > button {
     padding: 0.8rem 2.5rem;
-    font-size: 1rem;
+    font-size: 0.9rem;
+    letter-spacing: -0.036rem;
+    text-indent: -0.036rem;
   }
 }
 @media all and (width < 576px) {
-  main > section.opinion form > button {
+  #app > main > section.opinion form > button {
     padding: 0.75rem 2.34375rem;
-    font-size: 0.9375rem;
+    font-size: 0.84375rem;
+    letter-spacing: -0.03375rem;
+    text-indent: -0.03375rem;
   }
 }
-main > section.introduce .swiper {
+#app > main > section.opinion form > button:hover {
+  background: #FFFFFF;
+  color: #FC3435;
+}
+#app > main > section.introduce .swiper {
   width: 100%;
 }
-main > section.introduce .swiper .swiper-slide {
+#app > main > section.introduce .swiper .swiper-slide {
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: start;
   align-items: center;
-  gap: 1.875rem;
 }
-@media all and (992px <= width < 1200px) {
-  main > section.introduce .swiper .swiper-slide {
-    gap: 1.6875rem;
-  }
-}
-@media all and (768px <= width < 992px) {
-  main > section.introduce .swiper .swiper-slide {
-    gap: 1.6875rem;
-  }
-}
-@media all and (576px <= width < 768px) {
-  main > section.introduce .swiper .swiper-slide {
-    gap: 1.5rem;
-  }
-}
-@media all and (width < 576px) {
-  main > section.introduce .swiper .swiper-slide {
-    gap: 1.40625rem;
-  }
-}
-main > section.introduce .swiper .swiper-slide > .section-title {
+#app > main > section.introduce .swiper .swiper-slide > .slide-body {
   width: 100%;
-  padding: 1.5rem;
-  border-bottom: 0.125rem solid #373737;
-  font-size: 1.875rem;
-  color: #2E2E2E;
-}
-@media all and (992px <= width < 1200px) {
-  main > section.introduce .swiper .swiper-slide > .section-title {
-    padding: 1.35rem;
-    font-size: 1.6875rem;
-  }
-}
-@media all and (768px <= width < 992px) {
-  main > section.introduce .swiper .swiper-slide > .section-title {
-    padding: 1.35rem;
-    font-size: 1.6875rem;
-  }
-}
-@media all and (576px <= width < 768px) {
-  main > section.introduce .swiper .swiper-slide > .section-title {
-    padding: 1rem;
-    font-size: 1.5rem;
-  }
-}
-@media all and (width < 576px) {
-  main > section.introduce .swiper .swiper-slide > .section-title {
-    padding: 1rem;
-    font-size: 1.40625rem;
-  }
-}
-main > section.introduce .swiper .swiper-slide > .section-title > sub {
-  padding: 0.25rem 1rem;
-  border-radius: 2rem;
-  background: #2E2E2E;
-  font-size: 1.125rem;
-  color: #EBEB2B;
-}
-@media all and (992px <= width < 1200px) {
-  main > section.introduce .swiper .swiper-slide > .section-title > sub {
-    padding: 0.225rem 0.9rem;
-    font-size: 1.0125rem;
-  }
-}
-@media all and (768px <= width < 992px) {
-  main > section.introduce .swiper .swiper-slide > .section-title > sub {
-    padding: 0.225rem 0.9rem;
-    font-size: 1.0125rem;
-  }
-}
-@media all and (576px <= width < 768px) {
-  main > section.introduce .swiper .swiper-slide > .section-title > sub {
-    padding: 0.2rem 0.8rem;
-    font-size: 0.9rem;
-  }
-}
-@media all and (width < 576px) {
-  main > section.introduce .swiper .swiper-slide > .section-title > sub {
-    padding: 0.1875rem 0.75rem;
-    font-size: 0.84375rem;
-  }
-}
-main > section.introduce .swiper .swiper-slide > .notice {
-  width: 100%;
-  margin-top: -1.875rem;
-  padding: 1.75rem;
   display: flex;
   flex-direction: row;
   justify-content: start;
   align-items: center;
-  gap: 1rem;
-  background: #FFF3F3;
 }
 @media all and (992px <= width < 1200px) {
-  main > section.introduce .swiper .swiper-slide > .notice {
-    margin-top: -1.6875rem;
-    flex-direction: column;
-    gap: 0.9rem;
+  #app > main > section.introduce .swiper .swiper-slide > .slide-body {
+    flex-direction: column-reverse;
   }
 }
 @media all and (768px <= width < 992px) {
-  main > section.introduce .swiper .swiper-slide > .notice {
-    margin-top: -1.6875rem;
-    flex-direction: column;
-    gap: 0.9rem;
+  #app > main > section.introduce .swiper .swiper-slide > .slide-body {
+    flex-direction: column-reverse;
   }
 }
 @media all and (576px <= width < 768px) {
-  main > section.introduce .swiper .swiper-slide > .notice {
-    margin-top: -1.5rem;
-    flex-direction: column;
-    gap: 0.8rem;
+  #app > main > section.introduce .swiper .swiper-slide > .slide-body {
+    flex-direction: column-reverse;
   }
 }
 @media all and (width < 576px) {
-  main > section.introduce .swiper .swiper-slide > .notice {
-    margin-top: -1.40625rem;
-    flex-direction: column;
-    gap: 0.75rem;
+  #app > main > section.introduce .swiper .swiper-slide > .slide-body {
+    flex-direction: column-reverse;
   }
 }
-main > section.introduce .swiper .swiper-slide > .notice > h3 {
-  padding: 0.5rem 3.125rem;
+#app > main > section.introduce .swiper .swiper-slide > .slide-body > .text {
+  flex: 1;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
-  border: 0.0625rem solid #FC3435;
-  border-radius: 4rem;
-  font-size: 1.25rem;
-  font-weight: 500;
-  color: #FC3435;
+  align-items: start;
 }
 @media all and (992px <= width < 1200px) {
-  main > section.introduce .swiper .swiper-slide > .notice > h3 {
-    padding: 0.45rem 2.8125rem;
-    font-size: 1.125rem;
+  #app > main > section.introduce .swiper .swiper-slide > .slide-body > .text {
+    width: 100%;
+    flex: unset;
   }
 }
 @media all and (768px <= width < 992px) {
-  main > section.introduce .swiper .swiper-slide > .notice > h3 {
-    padding: 0.45rem 2.8125rem;
-    font-size: 1.125rem;
+  #app > main > section.introduce .swiper .swiper-slide > .slide-body > .text {
+    width: 100%;
+    flex: unset;
   }
 }
 @media all and (576px <= width < 768px) {
-  main > section.introduce .swiper .swiper-slide > .notice > h3 {
-    padding: 0.4rem 2.5rem;
-    font-size: 1rem;
+  #app > main > section.introduce .swiper .swiper-slide > .slide-body > .text {
+    width: 100%;
+    flex: unset;
   }
 }
 @media all and (width < 576px) {
-  main > section.introduce .swiper .swiper-slide > .notice > h3 {
-    padding: 0.375rem 2.34375rem;
-    font-size: 0.9375rem;
+  #app > main > section.introduce .swiper .swiper-slide > .slide-body > .text {
+    width: 100%;
+    flex: unset;
   }
 }
-main > section.introduce .swiper .swiper-slide > .notice > span {
-  font-size: 1.25rem;
-  font-weight: bold;
-  color: #3A3A3A;
-}
-@media all and (992px <= width < 1200px) {
-  main > section.introduce .swiper .swiper-slide > .notice > span {
-    font-size: 1.125rem;
-  }
-}
-@media all and (768px <= width < 992px) {
-  main > section.introduce .swiper .swiper-slide > .notice > span {
-    font-size: 1.125rem;
-  }
-}
-@media all and (576px <= width < 768px) {
-  main > section.introduce .swiper .swiper-slide > .notice > span {
-    font-size: 1rem;
-  }
-}
-@media all and (width < 576px) {
-  main > section.introduce .swiper .swiper-slide > .notice > span {
-    font-size: 0.9375rem;
-  }
-}
-main > section.introduce .swiper .swiper-slide > .summary {
-  width: 100%;
-  padding: 0 1.5rem;
-  font-size: 1.25rem;
-  font-weight: 500;
-  color: #7E7E7E;
-}
-@media all and (992px <= width < 1200px) {
-  main > section.introduce .swiper .swiper-slide > .summary {
-    padding: 0 1.35rem;
-    font-size: 1.125rem;
-  }
-}
-@media all and (768px <= width < 992px) {
-  main > section.introduce .swiper .swiper-slide > .summary {
-    padding: 0 1.35rem;
-    font-size: 1.125rem;
-  }
-}
-@media all and (576px <= width < 768px) {
-  main > section.introduce .swiper .swiper-slide > .summary {
-    padding: 0 1rem;
-    font-size: 1rem;
-  }
-}
-@media all and (width < 576px) {
-  main > section.introduce .swiper .swiper-slide > .summary {
-    padding: 0 1rem;
-    font-size: 0.9375rem;
-  }
-}
-main > section.introduce .swiper .swiper-slide > .summary > mark {
-  background: none;
-  color: #FC3435;
-}
-main > section.introduce .swiper .swiper-slide > .explain {
+#app > main > section.introduce .swiper .swiper-slide > .slide-body > .text > .explain {
   width: 100%;
   padding: 2.5rem 1.5rem;
   display: flex;
@@ -1135,157 +1269,142 @@ main > section.introduce .swiper .swiper-slide > .explain {
   align-items: start;
 }
 @media all and (992px <= width < 1200px) {
-  main > section.introduce .swiper .swiper-slide > .explain {
+  #app > main > section.introduce .swiper .swiper-slide > .slide-body > .text > .explain {
     padding: 2.25rem 1.35rem;
   }
 }
 @media all and (768px <= width < 992px) {
-  main > section.introduce .swiper .swiper-slide > .explain {
+  #app > main > section.introduce .swiper .swiper-slide > .slide-body > .text > .explain {
     padding: 2.25rem 1.35rem;
   }
 }
 @media all and (576px <= width < 768px) {
-  main > section.introduce .swiper .swiper-slide > .explain {
+  #app > main > section.introduce .swiper .swiper-slide > .slide-body > .text > .explain {
     padding: 2rem 1rem;
   }
 }
 @media all and (width < 576px) {
-  main > section.introduce .swiper .swiper-slide > .explain {
+  #app > main > section.introduce .swiper .swiper-slide > .slide-body > .text > .explain {
     padding: 1.875rem 1rem;
   }
 }
-main > section.introduce .swiper .swiper-slide > .explain > span {
+#app > main > section.introduce .swiper .swiper-slide > .slide-body > .text > .explain > span {
   margin-bottom: 1rem;
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: bold;
+  letter-spacing: -0.045rem;
+  text-indent: -0.045rem;
   color: #2E2E2E;
 }
 @media all and (992px <= width < 1200px) {
-  main > section.introduce .swiper .swiper-slide > .explain > span {
+  #app > main > section.introduce .swiper .swiper-slide > .slide-body > .text > .explain > span {
     margin-bottom: 0.9rem;
-    font-size: 1.125rem;
+    font-size: 1.0125rem;
+    letter-spacing: -0.0405rem;
+    text-indent: -0.0405rem;
   }
 }
 @media all and (768px <= width < 992px) {
-  main > section.introduce .swiper .swiper-slide > .explain > span {
+  #app > main > section.introduce .swiper .swiper-slide > .slide-body > .text > .explain > span {
     margin-bottom: 0.9rem;
-    font-size: 1.125rem;
+    font-size: 1.0125rem;
+    letter-spacing: -0.0405rem;
+    text-indent: -0.0405rem;
   }
 }
 @media all and (576px <= width < 768px) {
-  main > section.introduce .swiper .swiper-slide > .explain > span {
+  #app > main > section.introduce .swiper .swiper-slide > .slide-body > .text > .explain > span {
     margin-bottom: 0.8rem;
-    font-size: 1rem;
+    font-size: 0.9rem;
+    letter-spacing: -0.036rem;
+    text-indent: -0.036rem;
   }
 }
 @media all and (width < 576px) {
-  main > section.introduce .swiper .swiper-slide > .explain > span {
+  #app > main > section.introduce .swiper .swiper-slide > .slide-body > .text > .explain > span {
     margin-bottom: 0.75rem;
-    font-size: 0.9375rem;
+    font-size: 0.84375rem;
+    letter-spacing: -0.03375rem;
+    text-indent: -0.03375rem;
   }
 }
-main > section.introduce .swiper .swiper-slide > .explain > li {
+#app > main > section.introduce .swiper .swiper-slide > .slide-body > .text > .explain > li {
   list-style: inside;
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: 500;
+  letter-spacing: -0.045rem;
+  text-indent: -0.045rem;
   color: #7E7E7E;
 }
 @media all and (992px <= width < 1200px) {
-  main > section.introduce .swiper .swiper-slide > .explain > li {
-    font-size: 1.125rem;
+  #app > main > section.introduce .swiper .swiper-slide > .slide-body > .text > .explain > li {
+    font-size: 1.0125rem;
+    letter-spacing: -0.0405rem;
+    text-indent: -0.0405rem;
   }
 }
 @media all and (768px <= width < 992px) {
-  main > section.introduce .swiper .swiper-slide > .explain > li {
-    font-size: 1.125rem;
+  #app > main > section.introduce .swiper .swiper-slide > .slide-body > .text > .explain > li {
+    font-size: 1.0125rem;
+    letter-spacing: -0.0405rem;
+    text-indent: -0.0405rem;
   }
 }
 @media all and (576px <= width < 768px) {
-  main > section.introduce .swiper .swiper-slide > .explain > li {
-    font-size: 1rem;
+  #app > main > section.introduce .swiper .swiper-slide > .slide-body > .text > .explain > li {
+    font-size: 0.9rem;
+    letter-spacing: -0.036rem;
+    text-indent: -0.036rem;
   }
 }
 @media all and (width < 576px) {
-  main > section.introduce .swiper .swiper-slide > .explain > li {
-    font-size: 0.9375rem;
+  #app > main > section.introduce .swiper .swiper-slide > .slide-body > .text > .explain > li {
+    font-size: 0.84375rem;
+    letter-spacing: -0.03375rem;
+    text-indent: -0.03375rem;
   }
 }
-main > section.introduce .swiper .swiper-slide > .explain > li::marker {
+#app > main > section.introduce .swiper .swiper-slide > .slide-body > .text > .explain > li::marker {
   content: " - ";
 }
-main > section.introduce .swiper .swiper-slide:nth-of-type(1) {
-  background: rgba(255, 255, 255, 0.3) url("../images/slide01.png") no-repeat right bottom/43.75rem auto;
-  background-blend-mode: color;
+#app > main > section.introduce .swiper .swiper-slide > .slide-body > img {
+  width: 45%;
+  aspect-ratio: 16/9;
+  padding: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  object-fit: contain;
 }
 @media all and (992px <= width < 1200px) {
-  main > section.introduce .swiper .swiper-slide:nth-of-type(1) {
-    background: none;
+  #app > main > section.introduce .swiper .swiper-slide > .slide-body > img {
+    width: 100%;
+    max-width: 42.5rem;
+    padding: 1.35rem;
   }
 }
 @media all and (768px <= width < 992px) {
-  main > section.introduce .swiper .swiper-slide:nth-of-type(1) {
-    background: none;
+  #app > main > section.introduce .swiper .swiper-slide > .slide-body > img {
+    width: 100%;
+    max-width: 42.5rem;
+    padding: 1.35rem;
   }
 }
 @media all and (576px <= width < 768px) {
-  main > section.introduce .swiper .swiper-slide:nth-of-type(1) {
-    background: none;
+  #app > main > section.introduce .swiper .swiper-slide > .slide-body > img {
+    width: 100%;
+    max-width: 30rem;
+    padding: 1.2rem;
   }
 }
 @media all and (width < 576px) {
-  main > section.introduce .swiper .swiper-slide:nth-of-type(1) {
-    background: none;
+  #app > main > section.introduce .swiper .swiper-slide > .slide-body > img {
+    width: 100%;
+    max-width: 20rem;
+    padding: 1.125rem;
   }
 }
-main > section.introduce .swiper .swiper-slide:nth-of-type(2) {
-  background: rgba(255, 255, 255, 0.3) url("../images/slide02.png") no-repeat right bottom/43.75rem auto;
-  background-blend-mode: color;
-}
-@media all and (992px <= width < 1200px) {
-  main > section.introduce .swiper .swiper-slide:nth-of-type(2) {
-    background: none;
-  }
-}
-@media all and (768px <= width < 992px) {
-  main > section.introduce .swiper .swiper-slide:nth-of-type(2) {
-    background: none;
-  }
-}
-@media all and (576px <= width < 768px) {
-  main > section.introduce .swiper .swiper-slide:nth-of-type(2) {
-    background: none;
-  }
-}
-@media all and (width < 576px) {
-  main > section.introduce .swiper .swiper-slide:nth-of-type(2) {
-    background: none;
-  }
-}
-main > section.introduce .swiper .swiper-slide:nth-of-type(3) {
-  background: rgba(255, 255, 255, 0.3) url("../images/slide03.png") no-repeat right bottom/26.25rem auto;
-  background-blend-mode: color;
-}
-@media all and (992px <= width < 1200px) {
-  main > section.introduce .swiper .swiper-slide:nth-of-type(3) {
-    background: none;
-  }
-}
-@media all and (768px <= width < 992px) {
-  main > section.introduce .swiper .swiper-slide:nth-of-type(3) {
-    background: none;
-  }
-}
-@media all and (576px <= width < 768px) {
-  main > section.introduce .swiper .swiper-slide:nth-of-type(3) {
-    background: none;
-  }
-}
-@media all and (width < 576px) {
-  main > section.introduce .swiper .swiper-slide:nth-of-type(3) {
-    background: none;
-  }
-}
-main > section.introduce .swiper-control {
+#app > main > section.introduce .swiper-control {
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -1293,7 +1412,7 @@ main > section.introduce .swiper-control {
   align-items: center;
   gap: 1rem;
 }
-main > section.introduce .swiper-control > a {
+#app > main > section.introduce .swiper-control > a {
   width: 3rem;
   aspect-ratio: 1/1;
   display: flex;
@@ -1301,32 +1420,32 @@ main > section.introduce .swiper-control > a {
   align-items: center;
 }
 @media all and (992px <= width < 1200px) {
-  main > section.introduce .swiper-control > a {
+  #app > main > section.introduce .swiper-control > a {
     width: 2.5rem;
   }
 }
 @media all and (768px <= width < 992px) {
-  main > section.introduce .swiper-control > a {
+  #app > main > section.introduce .swiper-control > a {
     width: 2.5rem;
   }
 }
 @media all and (576px <= width < 768px) {
-  main > section.introduce .swiper-control > a {
+  #app > main > section.introduce .swiper-control > a {
     width: 2rem;
   }
 }
 @media all and (width < 576px) {
-  main > section.introduce .swiper-control > a {
+  #app > main > section.introduce .swiper-control > a {
     width: 2rem;
   }
 }
-main > section.introduce .swiper-control > a > img {
+#app > main > section.introduce .swiper-control > a > img {
   width: 100%;
 }
-main > section.introduce .swiper-control > a.swiper-button-disabled {
+#app > main > section.introduce .swiper-control > a.swiper-button-disabled {
   opacity: 0.4;
 }
-main > section.introduce .swiper-control > .swiper-pagination {
+#app > main > section.introduce .swiper-control > .swiper-pagination {
   width: auto;
   height: 0.25rem;
   position: unset;
@@ -1334,164 +1453,200 @@ main > section.introduce .swiper-control > .swiper-pagination {
   border-radius: 0.25rem;
   background: #C8C8C8;
 }
-main > section.introduce .swiper-control > .swiper-pagination > .swiper-pagination-progressbar-fill {
+#app > main > section.introduce .swiper-control > .swiper-pagination > .swiper-pagination-progressbar-fill {
   background: #FC3435;
 }
-main > section.next {
+#app > main > section.next {
   margin-top: 2rem;
   background: #F6F6F6;
 }
 @media all and (992px <= width < 1200px) {
-  main > section.next {
+  #app > main > section.next {
     margin-top: 1.8rem;
   }
 }
 @media all and (768px <= width < 992px) {
-  main > section.next {
+  #app > main > section.next {
     margin-top: 1.8rem;
   }
 }
 @media all and (576px <= width < 768px) {
-  main > section.next {
+  #app > main > section.next {
     margin-top: 1.6rem;
   }
 }
 @media all and (width < 576px) {
-  main > section.next {
+  #app > main > section.next {
     margin-top: 1.5rem;
   }
 }
-main > section.next > .section-inner {
+#app > main > section.next > .section-inner {
   padding: 6.25rem 0;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  gap: 1.875rem;
 }
 @media all and (992px <= width < 1200px) {
-  main > section.next > .section-inner {
+  #app > main > section.next > .section-inner {
     padding: 5.625rem 0;
+    gap: 1.6875rem;
   }
 }
 @media all and (768px <= width < 992px) {
-  main > section.next > .section-inner {
+  #app > main > section.next > .section-inner {
     padding: 5.625rem 0;
+    gap: 1.6875rem;
   }
 }
 @media all and (576px <= width < 768px) {
-  main > section.next > .section-inner {
+  #app > main > section.next > .section-inner {
     padding: 3.125rem 0;
     flex-direction: column;
+    gap: 1.5rem;
   }
 }
 @media all and (width < 576px) {
-  main > section.next > .section-inner {
+  #app > main > section.next > .section-inner {
     padding: 3.125rem 0;
     flex-direction: column;
+    gap: 1.40625rem;
   }
 }
-main > section.next > .section-inner > .text {
+#app > main > section.next > .section-inner > .text {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: start;
 }
 @media all and (576px <= width < 768px) {
-  main > section.next > .section-inner > .text {
+  #app > main > section.next > .section-inner > .text {
     align-items: center;
     text-align: center;
   }
 }
 @media all and (width < 576px) {
-  main > section.next > .section-inner > .text {
+  #app > main > section.next > .section-inner > .text {
     align-items: center;
     text-align: center;
   }
 }
-main > section.next > .section-inner > .text > h3 {
+#app > main > section.next > .section-inner > .text > h3 {
   margin-bottom: 0.5rem;
+  font-family: "GmarketSans", sans-serif;
   font-size: 1.875rem;
+  letter-spacing: -0.075rem;
+  text-indent: -0.075rem;
   color: #FC3435;
 }
 @media all and (992px <= width < 1200px) {
-  main > section.next > .section-inner > .text > h3 {
+  #app > main > section.next > .section-inner > .text > h3 {
     margin-bottom: 0.45rem;
     font-size: 1.6875rem;
+    letter-spacing: -0.0675rem;
+    text-indent: -0.0675rem;
   }
 }
 @media all and (768px <= width < 992px) {
-  main > section.next > .section-inner > .text > h3 {
+  #app > main > section.next > .section-inner > .text > h3 {
     margin-bottom: 0.45rem;
     font-size: 1.6875rem;
+    letter-spacing: -0.0675rem;
+    text-indent: -0.0675rem;
   }
 }
 @media all and (576px <= width < 768px) {
-  main > section.next > .section-inner > .text > h3 {
+  #app > main > section.next > .section-inner > .text > h3 {
     margin-bottom: 0.4rem;
     font-size: 1.5rem;
+    letter-spacing: -0.06rem;
+    text-indent: -0.06rem;
   }
 }
 @media all and (width < 576px) {
-  main > section.next > .section-inner > .text > h3 {
+  #app > main > section.next > .section-inner > .text > h3 {
     margin-bottom: 0.375rem;
     font-size: 1.40625rem;
+    letter-spacing: -0.05625rem;
+    text-indent: -0.05625rem;
   }
 }
-main > section.next > .section-inner > .text > h2 {
+#app > main > section.next > .section-inner > .text > h2 {
   margin-bottom: 1.25rem;
   font-size: 3.125rem;
+  letter-spacing: -0.125rem;
+  text-indent: -0.125rem;
   color: #2E2E2E;
 }
 @media all and (992px <= width < 1200px) {
-  main > section.next > .section-inner > .text > h2 {
+  #app > main > section.next > .section-inner > .text > h2 {
     margin-bottom: 1.125rem;
     font-size: 2.8125rem;
+    letter-spacing: -0.1125rem;
+    text-indent: -0.1125rem;
   }
 }
 @media all and (768px <= width < 992px) {
-  main > section.next > .section-inner > .text > h2 {
+  #app > main > section.next > .section-inner > .text > h2 {
     margin-bottom: 1.125rem;
     font-size: 2.8125rem;
+    letter-spacing: -0.1125rem;
+    text-indent: -0.1125rem;
   }
 }
 @media all and (576px <= width < 768px) {
-  main > section.next > .section-inner > .text > h2 {
+  #app > main > section.next > .section-inner > .text > h2 {
     margin-bottom: 1rem;
     font-size: 2.5rem;
+    letter-spacing: -0.1rem;
+    text-indent: -0.1rem;
   }
 }
 @media all and (width < 576px) {
-  main > section.next > .section-inner > .text > h2 {
+  #app > main > section.next > .section-inner > .text > h2 {
     margin-bottom: 0.9375rem;
     font-size: 2.34375rem;
+    letter-spacing: -0.09375rem;
+    text-indent: -0.09375rem;
   }
 }
-main > section.next > .section-inner > .text > span {
+#app > main > section.next > .section-inner > .text > span {
   font-size: 1.25rem;
   font-weight: 500;
+  letter-spacing: -0.05rem;
+  text-indent: -0.05rem;
   color: #7E7E7E;
 }
 @media all and (992px <= width < 1200px) {
-  main > section.next > .section-inner > .text > span {
+  #app > main > section.next > .section-inner > .text > span {
     font-size: 1.125rem;
+    letter-spacing: -0.045rem;
+    text-indent: -0.045rem;
   }
 }
 @media all and (768px <= width < 992px) {
-  main > section.next > .section-inner > .text > span {
+  #app > main > section.next > .section-inner > .text > span {
     font-size: 1.125rem;
+    letter-spacing: -0.045rem;
+    text-indent: -0.045rem;
   }
 }
 @media all and (576px <= width < 768px) {
-  main > section.next > .section-inner > .text > span {
+  #app > main > section.next > .section-inner > .text > span {
     font-size: 1rem;
+    letter-spacing: -0.04rem;
+    text-indent: -0.04rem;
   }
 }
 @media all and (width < 576px) {
-  main > section.next > .section-inner > .text > span {
+  #app > main > section.next > .section-inner > .text > span {
     font-size: 0.9375rem;
+    letter-spacing: -0.0375rem;
+    text-indent: -0.0375rem;
   }
 }
-main > section.next > .section-inner > a {
+#app > main > section.next > .section-inner > a {
   padding: 1.5rem 3rem;
   display: flex;
   flex-direction: row;
@@ -1502,87 +1657,96 @@ main > section.next > .section-inner > a {
   background: #CBCBCB;
   font-size: 1.5rem;
   font-weight: 500;
+  letter-spacing: -0.06rem;
+  text-indent: -0.06rem;
   color: #FFFFFF;
 }
 @media all and (992px <= width < 1200px) {
-  main > section.next > .section-inner > a {
+  #app > main > section.next > .section-inner > a {
     padding: 1.35rem 2.7rem;
     gap: 1.35rem;
     font-size: 1.35rem;
+    letter-spacing: -0.054rem;
+    text-indent: -0.054rem;
   }
 }
 @media all and (768px <= width < 992px) {
-  main > section.next > .section-inner > a {
+  #app > main > section.next > .section-inner > a {
     padding: 1.35rem 2.7rem;
     gap: 1.35rem;
     font-size: 1.35rem;
+    letter-spacing: -0.054rem;
+    text-indent: -0.054rem;
   }
 }
 @media all and (576px <= width < 768px) {
-  main > section.next > .section-inner > a {
+  #app > main > section.next > .section-inner > a {
     padding: 1.2rem 2.4rem;
     gap: 1.2rem;
     font-size: 1.2rem;
+    letter-spacing: -0.048rem;
+    text-indent: -0.048rem;
   }
 }
 @media all and (width < 576px) {
-  main > section.next > .section-inner > a {
+  #app > main > section.next > .section-inner > a {
     padding: 1.125rem 2.25rem;
     gap: 1.125rem;
     font-size: 1.125rem;
+    letter-spacing: -0.045rem;
+    text-indent: -0.045rem;
   }
 }
-main > section.next > .section-inner > a > img {
+#app > main > section.next > .section-inner > img {
   width: 3.875rem;
 }
 @media all and (992px <= width < 1200px) {
-  main > section.next > .section-inner > a > img {
+  #app > main > section.next > .section-inner > img {
     width: 3.4875rem;
   }
 }
 @media all and (768px <= width < 992px) {
-  main > section.next > .section-inner > a > img {
+  #app > main > section.next > .section-inner > img {
     width: 3.4875rem;
   }
 }
 @media all and (576px <= width < 768px) {
-  main > section.next > .section-inner > a > img {
+  #app > main > section.next > .section-inner > img {
     width: 3.1rem;
   }
 }
 @media all and (width < 576px) {
-  main > section.next > .section-inner > a > img {
+  #app > main > section.next > .section-inner > img {
     width: 2.90625rem;
   }
 }
-
-footer {
+#app > footer {
   width: 100%;
   padding: 0 2rem;
-  z-index: 9997;
+  z-index: 9995;
   background: #0F0F0F;
 }
 @media all and (992px <= width < 1200px) {
-  footer {
+  #app > footer {
     padding: 0 1.5rem;
   }
 }
 @media all and (768px <= width < 992px) {
-  footer {
+  #app > footer {
     padding: 0 1.5rem;
   }
 }
 @media all and (576px <= width < 768px) {
-  footer {
+  #app > footer {
     padding: 0 1rem;
   }
 }
 @media all and (width < 576px) {
-  footer {
+  #app > footer {
     padding: 0 1rem;
   }
 }
-footer > .footer-inner {
+#app > footer > .footer-inner {
   width: 100%;
   max-width: 90rem;
   margin: 0 auto;
@@ -1594,187 +1758,95 @@ footer > .footer-inner {
   gap: 3.125rem;
 }
 @media all and (992px <= width < 1200px) {
-  footer > .footer-inner {
+  #app > footer > .footer-inner {
     padding: 2.8125rem 0;
     gap: 2.8125rem;
   }
 }
 @media all and (768px <= width < 992px) {
-  footer > .footer-inner {
+  #app > footer > .footer-inner {
     padding: 2.8125rem 0;
     gap: 2.8125rem;
   }
 }
 @media all and (576px <= width < 768px) {
-  footer > .footer-inner {
+  #app > footer > .footer-inner {
     padding: 2.5rem 0;
     gap: 2.5rem;
   }
 }
 @media all and (width < 576px) {
-  footer > .footer-inner {
+  #app > footer > .footer-inner {
     padding: 2.34375rem 0;
     gap: 2.34375rem;
   }
 }
-footer > .footer-inner > .info {
+#app > footer > .footer-inner > .info {
   font-size: 1rem;
   line-height: 160%;
+  letter-spacing: -0.04rem;
+  text-indent: -0.04rem;
   color: #9C9C9C;
 }
 @media all and (992px <= width < 1200px) {
-  footer > .footer-inner > .info {
+  #app > footer > .footer-inner > .info {
     font-size: 0.9rem;
+    letter-spacing: -0.036rem;
+    text-indent: -0.036rem;
   }
 }
 @media all and (768px <= width < 992px) {
-  footer > .footer-inner > .info {
+  #app > footer > .footer-inner > .info {
     font-size: 0.9rem;
+    letter-spacing: -0.036rem;
+    text-indent: -0.036rem;
   }
 }
 @media all and (576px <= width < 768px) {
-  footer > .footer-inner > .info {
+  #app > footer > .footer-inner > .info {
     font-size: 0.8rem;
+    letter-spacing: -0.032rem;
+    text-indent: -0.032rem;
   }
 }
 @media all and (width < 576px) {
-  footer > .footer-inner > .info {
+  #app > footer > .footer-inner > .info {
     font-size: 0.75rem;
+    letter-spacing: -0.034rem;
+    text-indent: -0.034rem;
   }
 }
-footer > .footer-inner > .info > p:first-of-type {
+#app > footer > .footer-inner > .info > p:first-of-type {
   font-weight: bold;
   color: #FFFFFF;
 }
-
-.alert {
+#app > .blur {
   width: 100%;
-  height: 100%;
-  padding: 0 2rem;
+  height: 100vh;
   position: fixed;
   top: 0;
   left: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   z-index: -9999;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(0.25rem);
+  opacity: 0;
 }
-@media all and (992px <= width < 1200px) {
-  .alert {
-    padding: 0 1.5rem;
-  }
+#app > .blur.on {
+  z-index: 9998;
 }
-@media all and (768px <= width < 992px) {
-  .alert {
-    padding: 0 1.5rem;
-  }
-}
-@media all and (576px <= width < 768px) {
-  .alert {
-    padding: 0 1rem;
-  }
-}
-@media all and (width < 576px) {
-  .alert {
-    padding: 0 1rem;
-  }
-}
-.alert > .alert-inner {
+#app > aside {
   width: 100%;
   max-width: 30rem;
-  padding: 1.5rem;
-  aspect-ratio: 4/3;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-  border: 0.125rem solid #FC3435;
-  border-radius: 1rem;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: -100%;
+  z-index: 9998;
   background: #FFFFFF;
+  transition: all 0.3s ease;
 }
-@media all and (992px <= width < 1200px) {
-  .alert > .alert-inner {
-    padding: 1.35rem;
-  }
-}
-@media all and (768px <= width < 992px) {
-  .alert > .alert-inner {
-    padding: 1.35rem;
-  }
-}
-@media all and (576px <= width < 768px) {
-  .alert > .alert-inner {
-    padding: 1rem;
-  }
-}
-@media all and (width < 576px) {
-  .alert > .alert-inner {
-    padding: 1rem;
-  }
-}
-.alert > .alert-inner > span {
-  font-size: 1.5rem;
-  font-weight: bold;
-  text-align: center;
-}
-@media all and (992px <= width < 1200px) {
-  .alert > .alert-inner > span {
-    font-size: 1.35rem;
-  }
-}
-@media all and (768px <= width < 992px) {
-  .alert > .alert-inner > span {
-    font-size: 1.35rem;
-  }
-}
-@media all and (576px <= width < 768px) {
-  .alert > .alert-inner > span {
-    font-size: 1.2rem;
-  }
-}
-@media all and (width < 576px) {
-  .alert > .alert-inner > span {
-    font-size: 1.125rem;
-  }
-}
-.alert > .alert-inner > .close {
-  padding: 0.75rem 3rem;
-  border: none;
-  border-radius: 4rem;
-  outline: none;
-  background: #FC3435;
-  font-size: 1.25rem;
-  font-weight: 500;
-  color: #FFFFFF;
-}
-@media all and (992px <= width < 1200px) {
-  .alert > .alert-inner > .close {
-    padding: 0.675rem 2.7rem;
-    font-size: 1.125rem;
-  }
-}
-@media all and (768px <= width < 992px) {
-  .alert > .alert-inner > .close {
-    padding: 0.675rem 2.7rem;
-    font-size: 1.125rem;
-  }
-}
-@media all and (576px <= width < 768px) {
-  .alert > .alert-inner > .close {
-    padding: 0.6rem 2.4rem;
-    font-size: 1rem;
-  }
-}
-@media all and (width < 576px) {
-  .alert > .alert-inner > .close {
-    padding: 0.5625rem 2.25rem;
-    font-size: 0.9375rem;
-  }
-}
-.alert.active {
-  z-index: 9999;
+#app > aside.on {
+  left: 0;
 }
 
 /*# sourceMappingURL=common.css.map */

@@ -4,28 +4,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="x-ua-compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="KSR 시즌안내">
+    <meta name="author" content="Jia Seo">
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script type="text/javascript" src="./scripts/header.js"></script>
-    <script type="text/javascript" src="./scripts/nav.js"></script>
+    <script type="text/javascript" src="./scripts/asideControl.js"></script>
     <script type="text/javascript" src="./scripts/introduceSlide.js"></script>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" type="text/css" href="./styles/common.css">
 
-    <title>KSR 코리아 스피드레이싱</title>
+    <title>2024 코리아 스피드레이싱 시즌안내</title>
 </head>
 <body>
 <div id="app">
     <header>
-        <div class="toolbar">
-            <a class="link-home" href="https://ksrcamp.com/">KSR 공식홈 바로가기</a>
-        </div>
-        <div class="header-content">
-            <a class="logo" href="/ksr_temp">
-                <img src="./images/logo.svg" alt="KSR 로고">
-            </a>
-            <h1>2024 시즌 안내</h1>
+        <div class="header-inner">
+            <div class="toolbar">
+                <a class="link-home" href="https://ksrcamp.com/">KSR 공식홈 바로가기</a>
+            </div>
+            <div class="title">
+                <div class="btn-wrapper">
+                    <a class="open-aside">
+                        <img src="./images/btn_menu.svg" alt="메뉴">
+                    </a>
+                </div>
+                <a class="logo" href="/ksr_temp">
+                    <img src="./images/logo.svg" alt="KSR 로고">
+                </a>
+                <h1>2024 시즌 안내</h1>
+            </div>
             <nav>
                 <a class="active">클래스 변경</a>
                 <a>시즌 일정</a>
@@ -44,7 +54,7 @@
                     또한, 2023년도에 운영 된 기존 클래스들은 2024년도에도 동일하게 유지됩니다.
                 </span>
                 <div class="table-wrapper">
-                    <div class="table season23">
+                    <div class="table">
                         <span class="table-title">2023 시즌 운영 클래스</span>
                         <div class="table-body">
                             <ul>
@@ -61,14 +71,14 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="table season24">
+                    <div class="table">
                         <span class="table-title">2024 시즌 운영 클래스</span>
                         <div class="table-body">
                             <ul>
                                 <li class="name">GT-300</li>
                                 <li>TOYOTA GR86</li>
                                 <li>타임타겟</li>
-                                <li>듀오크로스어택</li>
+                                <li class="special">듀오크로스어택</li>
                             </ul>
                             <ul>
                                 <li class="name">GT-200</li>
@@ -121,43 +131,58 @@
                                 <h3>참고해주세요!</h3>
                                 <span>본 클래스는 클래스 명, 진행 방식이 확정되지 않았습니다. 시즌 오픈시 변경될 수 있습니다.</span>
                             </div>
-                            <span class="summary">
-                                TT는 Time Trial의 약자입니다. 현재 TT 클래스는 현대자동차 N 브랜드 차량인 벨로스터N, 아반떼N 차량으로만 출전 가능한 클래스만 존재합니다.<br>
-                                현대자동차 N 브랜드 차량 뿐만 아니라, 더욱 다양한 차량이 모터스포츠에 입문할 수 있도록 TT-ALL 클래스를 신설하였습니다.
-                            </span>
-                            <ul class="explain">
-                                <span>TT-ALL 클래스 기획의도 및 방향성</span>
-                                <li>현대자동차 N 브랜드를 제외한 나머지 차종에 대한 TT 클래스 참여 무대 제공</li>
-                                <li>구체안은 규정회의 이후 결정 될 예정</li>
-                            </ul>
+                            <div class="slide-body">
+                                <div class="text">
+                                    <span class="summary">
+                                        TT는 Time Trial의 약자입니다. 현재 TT 클래스는 현대자동차 N 브랜드 차량인 벨로스터N, 아반떼N 차량으로만 출전 가능한 클래스만 존재합니다.<br>
+                                        현대자동차 N 브랜드 차량 뿐만 아니라, 더욱 다양한 차량이 모터스포츠에 입문할 수 있도록 TT-ALL 클래스를 신설하였습니다.
+                                    </span>
+                                    <ul class="explain">
+                                        <span>TT-ALL 클래스 기획의도 및 방향성</span>
+                                        <li>현대자동차 N 브랜드를 제외한 나머지 차종에 대한 TT 클래스 참여 무대 제공</li>
+                                        <li>구체안은 규정회의 이후 결정 될 예정</li>
+                                    </ul>
+                                </div>
+                                <img src="./images/slide01.png" alt="슬라이드 1번 이미지">
+                            </div>
                         </div>
                         <div class="swiper-slide">
-                            <h2 class="section-title">타임타겟&nbsp;<sub>EV</sub> 클래스 소개</h2>
-                            <span class="summary">
-                                전기 모빌리티 차량으로도 레이스에 입문할 수 있는 타임타겟 EV 클래스입니다.<br>
-                                다양한 전기차 브랜드의 차량으로 누구나 참여할 수 있는 타임타겟 레이스입니다.<br>
-                                <mark>본 클래스는 2024 시즌 중도에 신설 될 예정입니다. (Round. 3 런칭 예정)</mark>
-                            </span>
-                            <ul class="explain">
-                                <span>타임타겟 EV 클래스 기획의도 및 방향성</span>
-                                <li>친환경 모빌리티인 EV 차량으로도 모터스포츠에 참여할 수 있는 참여 무대 제공</li>
-                                <li>전기차 브랜드별, 차종별 슈퍼 랩타임 기록실 서비스 제공 예정</li>
-                                <li>다양한 전기차 브랜드의 성능을 점검하고, 전기차로 모터스포츠에 입문할 수 있는 기회 제공</li>
-                            </ul>
+                            <h2 class="section-title">타임타겟&nbsp;<mark>EV</mark> 클래스 소개</h2>
+                            <div class="slide-body">
+                                <div class="text">
+                                    <span class="summary">
+                                        전기 모빌리티 차량으로도 레이스에 입문할 수 있는 타임타겟 EV 클래스입니다.<br>
+                                        다양한 전기차 브랜드의 차량으로 누구나 참여할 수 있는 타임타겟 레이스입니다.<br>
+                                        <mark>본 클래스는 2024 시즌 중도에 신설 될 예정입니다. (Round. 3 런칭 예정)</mark>
+                                    </span>
+                                    <ul class="explain">
+                                        <span>타임타겟 EV 클래스 기획의도 및 방향성</span>
+                                        <li>친환경 모빌리티인 EV 차량으로도 모터스포츠에 참여할 수 있는 참여 무대 제공</li>
+                                        <li>전기차 브랜드별, 차종별 슈퍼 랩타임 기록실 서비스 제공 예정</li>
+                                        <li>다양한 전기차 브랜드의 성능을 점검하고, 전기차로 모터스포츠에 입문할 수 있는 기회 제공</li>
+                                    </ul>
+                                </div>
+                                <img src="./images/slide02.png" alt="슬라이드 2번 이미지">
+                            </div>
                         </div>
                         <div class="swiper-slide">
                             <h2 class="section-title">듀오크로스어택 클래스 소개</h2>
-                            <span class="summary">
-                                운동회의 하이라이트는 바로 "이어달리기" 입니다.<br>
-                                이어달리기 종목을 모터스포츠화 한 새로운 이벤트 클래스를 선보입니다.<br>
-                                KSR은 새로운 팀 전략 레이스 클래스인 "듀오크로스어택"을 통해 이어달리기의 뜨거운 열기를 모터스포츠로 녹여 낼 예정입니다.
-                            </span>
-                            <ul class="explain">
-                                <span>듀오크로스어택 클래스 기획의도 및 방향성</span>
-                                <li>모든 클래스 레이서, 입문 아마추어 레이서 등 모두가 참여 가능한 팀 전략 레이스</li>
-                                <li>정해진 시간 내에 2대의 레이스 카가 합산 10Laps를 주행하여 각 레이스 카의 베스트 랩을 합산하는 레이스</li>
-                                <li>이어달리기의 모토를 그대로 반영하여, 배턴 패스 제도를 운영할 예정</li>
-                            </ul>
+                            <div class="slide-body">
+                                <div class="text">
+                                    <span class="summary">
+                                        운동회의 하이라이트는 바로 "이어달리기" 입니다.<br>
+                                        이어달리기 종목을 모터스포츠화 한 새로운 이벤트 클래스를 선보입니다.<br>
+                                        KSR은 새로운 팀 전략 레이스 클래스인 "듀오크로스어택"을 통해 이어달리기의 뜨거운 열기를 모터스포츠로 녹여 낼 예정입니다.
+                                    </span>
+                                    <ul class="explain">
+                                        <span>듀오크로스어택 클래스 기획의도 및 방향성</span>
+                                        <li>모든 클래스 레이서, 입문 아마추어 레이서 등 모두가 참여 가능한 팀 전략 레이스</li>
+                                        <li>정해진 시간 내에 2대의 레이스 카가 합산 10Laps를 주행하여 각 레이스 카의 베스트 랩을 합산하는 레이스</li>
+                                        <li>이어달리기의 모토를 그대로 반영하여, 배턴 패스 제도를 운영할 예정</li>
+                                    </ul>
+                                </div>
+                                <img src="./images/slide03.png" alt="슬라이드 3번 이미지">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -208,49 +233,33 @@
             </div>
         </div>
     </footer>
-    <div class="alert alert1">
-        <div class="alert-inner">
-            <span>
-                12월 18일(월)<br>
-                공개됩니다.
-            </span>
-            <button class="close" type="button">닫기</button>
-        </div>
-    </div>
-    <div class="alert alert2">
-        <div class="alert-inner">
-            <span>
-                준비 중입니다.<br>
-                곧 공개됩니다.
-            </span>
-            <button class="close" type="button">닫기</button>
-        </div>
-    </div>
+    <div class="blur"></div>
+    <aside></aside>
 </div>
 </body>
 </html>
+<!--    <footer>-->
+<!--        <div class="footer-inner">-->
 
-<!--<!DOCTYPE html>-->
-<!--<html lang="ko">-->
-<!--<head>-->
-<!--    <meta charset="UTF-8">-->
-<!--    <meta http-equiv="x-ua-compatible" content="IE=edge">-->
-<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">-->
-
-<!--    <script type="text/javascript" src="./scripts/header.js"></script>-->
-
-<!--    <link rel="stylesheet" type="text/css" href="./styles/common.css">-->
-<!--    <title>KSR 코리아 스피드레이싱</title>-->
-<!--<div class="alert schedule">-->
-<!--    <div class="alert-inner">-->
-
-<!--        <button class="close" type="button">닫기</button>-->
+<!--        </div>-->
+<!--    </footer>-->
+<!--    <div class="alert alert1">-->
+<!--        <div class="alert-inner">-->
+<!--            <span>-->
+<!--                12월 18일(월)<br>-->
+<!--                공개됩니다.-->
+<!--            </span>-->
+<!--            <button class="close" type="button">닫기</button>-->
+<!--        </div>-->
 <!--    </div>-->
-<!--</div>-->
-<!--<div class="alert default">-->
-<!--    <div class="alert-inner">-->
-
-<!--        <button class="close" type="button">닫기</button>-->
+<!--    <div class="alert alert2">-->
+<!--        <div class="alert-inner">-->
+<!--            <span>-->
+<!--                준비 중입니다.<br>-->
+<!--                곧 공개됩니다.-->
+<!--            </span>-->
+<!--            <button class="close" type="button">닫기</button>-->
+<!--        </div>-->
 <!--    </div>-->
 <!--</div>-->
 <!--</body>-->

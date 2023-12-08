@@ -4,13 +4,13 @@ window.addEventListener("load", () => {
 
 
     window.addEventListener("scroll", (e) => {
-        if (e.currentTarget.scrollY > 150) {
+        if (e.currentTarget.scrollY > 100) {
             toggleHeaderH = true;
         } else {
             toggleHeaderH = false;
         }
 
-        const toolbar = document.querySelector("header > .toolbar");
+        const toolbar = document.querySelector("header > .header-inner > .toolbar");
 
         if (toggleHeaderH) {
             toolbar.classList.add("disabled");
